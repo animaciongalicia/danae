@@ -11,16 +11,25 @@ export default function ResultsSection() {
           title={resultsContent.title}
           description={resultsContent.description}
         />
-        <dl className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
-          {resultsContent.benefits.map((benefit) => (
-            <div key={benefit.title}>
-              <dt className="font-serif text-xl">{benefit.title}</dt>
-              <dd className="mt-2 leading-relaxed text-muted">
-                {benefit.description}
-              </dd>
+        <div className="mt-12 grid gap-10 md:grid-cols-3">
+          {resultsContent.groups.map((group) => (
+            <div key={group.id}>
+              <h3 className="border-b border-border pb-3 text-sm font-medium uppercase tracking-widest text-accent">
+                {group.title}
+              </h3>
+              <dl className="mt-6 space-y-7">
+                {group.benefits.map((benefit) => (
+                  <div key={benefit.title}>
+                    <dt className="font-serif text-xl">{benefit.title}</dt>
+                    <dd className="mt-2 leading-relaxed text-muted">
+                      {benefit.description}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           ))}
-        </dl>
+        </div>
       </Container>
     </section>
   );

@@ -1,31 +1,49 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ServiceCard from "@/components/ui/ServiceCard";
 import { ButtonLink } from "@/components/ui/Button";
-import { services } from "@/config/services";
-import { positioningContent } from "@/content/home";
 
-export default function SolutionsSection() {
+interface SolutionsSectionProps {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: { id: string; title: string }[];
+  cta: { label: string; href: string };
+  tone?: "default" | "surface";
+}
+
+export default function SolutionsSection({
+  eyebrow,
+  title,
+  description,
+  items,
+  cta,
+  tone = "default",
+}: SolutionsSectionProps) {
+  const toneClasses =
+    tone === "surface" ? "border-y border-border bg-surface" : "";
+
   return (
-    <section className="py-20 sm:py-24">
+    <section className={`py-20 sm:py-24 ${toneClasses}`}>
       <Container>
         <SectionHeading
-          eyebrow="Soluciones"
-          title={positioningContent.title}
-          description={positioningContent.description}
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard
-              key={service.id}
-              title={service.title}
-              description={service.shortDescription}
-            />
+        <ul className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item) => (
+            <li
+              key={item.id}
+              className="flex items-center gap-3 rounded-card border border-border bg-white/50 px-5 py-4"
+            >
+              <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-accent" />
+              <span className="text-sm font-medium">{item.title}</span>
+            </li>
           ))}
-        </div>
+        </ul>
         <div className="mt-10">
-          <ButtonLink href="/soluciones" variant="secondary">
-            Conocer las soluciones en detalle
+          <ButtonLink href={cta.href} variant="secondary">
+            {cta.label}
           </ButtonLink>
         </div>
       </Container>

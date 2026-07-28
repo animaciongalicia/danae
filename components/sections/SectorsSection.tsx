@@ -5,7 +5,7 @@ import { sectors, sectorsPageContent } from "@/content/sectors";
 
 export default function SectorsSection() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="border-y border-border bg-surface py-20 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow={sectorsPageContent.eyebrow}
@@ -16,7 +16,7 @@ export default function SectorsSection() {
           {sectors.map((sector) => (
             <li
               key={sector.id}
-              className="flex items-center gap-3 rounded-xl border border-border px-5 py-4"
+              className="flex items-center gap-3 rounded-card border border-border bg-white/50 px-5 py-4"
             >
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent" />
               <span className="text-sm font-medium">{sector.title}</span>
