@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="border-b border-border bg-surface">
       <Container className="py-20 sm:py-28">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
+          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent-strong">
             {heroContent.eyebrow}
           </p>
           <h1 className="font-serif text-4xl leading-tight text-balance sm:text-5xl">

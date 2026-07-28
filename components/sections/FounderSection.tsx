@@ -14,7 +14,7 @@ export default function FounderSection() {
             <span className="font-serif text-5xl text-accent">ED</span>
           </div>
           <div className="md:col-span-3">
-            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent-strong">
               {founderContent.eyebrow}
             </p>
             <h2 className="font-serif text-3xl leading-tight text-balance sm:text-4xl">

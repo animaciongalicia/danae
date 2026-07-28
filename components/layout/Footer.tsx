@@ -15,7 +15,7 @@ function FooterColumn({
 }) {
   return (
     <nav aria-label={title}>
-      <p className="text-sm font-medium uppercase tracking-widest text-accent">
+      <p className="text-sm font-medium uppercase tracking-widest text-accent-strong">
         {title}
       </p>
       <ul className="mt-4 space-y-2">

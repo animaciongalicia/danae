@@ -14,7 +14,7 @@ export default function ResultsSection() {
         <div className="mt-12 grid gap-10 md:grid-cols-3">
           {resultsContent.groups.map((group) => (
             <div key={group.id}>
-              <h3 className="border-b border-border pb-3 text-sm font-medium uppercase tracking-widest text-accent">
+              <h3 className="border-b border-border pb-3 text-sm font-medium uppercase tracking-widest text-accent-strong">
                 {group.title}
               </h3>
               <ul className="mt-6 space-y-3">
