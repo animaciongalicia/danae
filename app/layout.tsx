@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { siteConfig, siteDescription } from "@/config/site";
+import { getSiteUrl } from "@/lib/utils";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,9 +17,19 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "DANAE Talent",
-  description:
-    "Soluciones de talento y operaciones para que cada servicio funcione mejor.",
+  metadataBase: new URL(getSiteUrl()),
+  title: {
+    default: `${siteConfig.name} — Soluciones de talento y operaciones`,
+    template: `%s — ${siteConfig.name}`,
+  },
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — Soluciones de talento y operaciones`,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
