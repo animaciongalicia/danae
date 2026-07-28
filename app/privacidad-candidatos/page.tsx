@@ -6,9 +6,8 @@ export const metadata: Metadata = {
   title: "Privacidad para candidatos",
   description:
     "Política de privacidad para candidatos de DANAE: cómo tratamos los datos personales de quienes envían su candidatura.",
+  alternates: { canonical: "/privacidad-candidatos" },
 };
-
-const pendingValue = "[Pendiente de completar]";
 
 export default function CandidatePrivacyPage() {
   return (
@@ -27,9 +26,11 @@ export default function CandidatePrivacyPage() {
         <section className="mt-10">
           <h2 className="font-serif text-xl">Responsable del tratamiento</h2>
           <ul className="mt-3 space-y-2 leading-relaxed text-muted">
-            <li>Responsable: {siteConfig.legalName || pendingValue}</li>
+            <li>Responsable: {siteConfig.legalName || "[NOMBRE]"}</li>
+            <li>NIF/CIF: [NIF/CIF]</li>
+            <li>Domicilio: [DOMICILIO]</li>
             <li>
-              Email de contacto: {siteConfig.candidateEmail || pendingValue}
+              Correo electrónico: {siteConfig.candidateEmail || "[CORREO]"}
             </li>
           </ul>
         </section>
@@ -61,7 +62,8 @@ export default function CandidatePrivacyPage() {
             imprescindibles a la empresa cliente para la que se organiza el
             servicio, y siempre en relación con dicho proceso. Para el envío de
             los formularios se utilizan proveedores de servicios técnicos de
-            correo electrónico que actúan como encargados del tratamiento.
+            correo electrónico que actúan como encargados del tratamiento:
+            [PROVEEDORES].
           </p>
         </section>
 
@@ -70,9 +72,9 @@ export default function CandidatePrivacyPage() {
           <p className="mt-3 leading-relaxed text-muted">
             Los datos de tu candidatura se conservan mientras se mantengan
             abiertos los procesos de selección para los que resulte relevante
-            tu perfil, y como máximo durante los plazos exigidos por la
-            normativa aplicable. Puedes solicitar su supresión en cualquier
-            momento.
+            tu perfil. Si autorizaste su conservación para futuros procesos, se
+            conservarán como máximo durante [PLAZO DE CONSERVACIÓN]. Puedes
+            solicitar su supresión en cualquier momento.
           </p>
         </section>
 

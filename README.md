@@ -90,9 +90,49 @@ Mientras las variables de Resend no estén configuradas, los formularios devuelv
 
 Los datos de contacto y la información legal se centralizan en `config/site.ts`. Los valores pendientes se dejan vacíos o con marcadores visibles: no se inventa información.
 
+## Textos legales
+
+> **Advertencia:** Los textos legales son plantillas técnicas y deben ser revisados por un profesional antes de publicar.
+
+Las páginas de aviso legal, privacidad, privacidad de candidatos y cookies usan marcadores visibles que hay que sustituir por los datos reales: `[NOMBRE]`, `[NIF/CIF]`, `[DOMICILIO]`, `[CORREO]`, `[TELÉFONO]`, `[PLAZO DE CONSERVACIÓN]`, `[PROVEEDORES]` y `[DATOS REGISTRALES]`. Los que dependen de `config/site.ts` (nombre, correo, teléfono) se rellenan solos al completar la configuración.
+
+## SEO y datos estructurados
+
+- Metadata global y por página con canonical, Open Graph y Twitter Card; `robots.txt`, `sitemap.xml` y web manifest generados por Next.js.
+- JSON-LD: `Organization`/`ProfessionalService` + `WebSite` globales; `WebPage` + `BreadcrumbList` por página; `Service` en `/soluciones`; `FAQPage` en `/contacto`. El `ContactPoint` solo se emite cuando hay email o teléfono configurados. No se emiten direcciones, horarios, valoraciones ni datos registrales (no existen datos reales todavía).
+- `/llms.txt` con información pública y verificada para buscadores generativos, generada desde los archivos de contenido.
+- Sin migas de pan visibles: el sitio tiene un solo nivel de profundidad y la navegación principal ya cubre ese papel (los `BreadcrumbList` van solo en JSON-LD).
+
 ## Despliegue en Vercel
 
-1. Importa el repositorio de GitHub en Vercel (framework detectado: Next.js; sin configuración especial de build).
-2. Añade las variables de entorno de `.env.example` con sus valores reales (Settings → Environment Variables).
-3. Despliega. Cada push a la rama principal genera un despliegue de producción; las ramas generan previews.
-4. Configura el dominio propio en Settings → Domains cuando esté decidido, y actualiza `NEXT_PUBLIC_SITE_URL` en consecuencia.
+El proyecto aún no está conectado a Vercel. Pasos exactos cuando se autorice:
+
+1. **Opción panel**: en [vercel.com/new](https://vercel.com/new), importa el repositorio `animaciongalicia/danae` (framework detectado: Next.js; sin configuración especial de build).
+   **Opción CLI**: `npm i -g vercel && vercel link && vercel --prod`.
+2. Añade las variables de entorno de `.env.example` con sus valores reales (Settings → Environment Variables), al menos en el environment Production; usa valores de prueba en Preview si quieres probar formularios en previews.
+3. Despliega. Obtendrás un dominio provisional `danae-*.vercel.app` con HTTPS automático.
+4. Cuando haya dominio propio: Settings → Domains → añade `dominio.com` y `www.dominio.com` (Vercel crea la redirección www → apex, o al revés, según cuál marques como principal), configura los DNS que indique Vercel y actualiza `NEXT_PUBLIC_SITE_URL`.
+5. Para el correo, añade en el DNS los registros SPF y DKIM que indica Resend al verificar el dominio, y valora publicar una política DMARC.
+
+## Checklist de publicación
+
+- [ ] **Dominio**: comprar/decidir dominio y configurarlo en Vercel (apex + www con redirección).
+- [ ] **Correos**: crear buzones reales y rellenar `EMAIL_CONTACT`, `EMAIL_CANDIDATES` y `email`/`candidateEmail` en `config/site.ts`.
+- [ ] **Teléfono**: rellenar `NEXT_PUBLIC_PHONE` (activa el botón de llamada).
+- [ ] **WhatsApp**: rellenar `NEXT_PUBLIC_WHATSAPP` con prefijo internacional (activa el botón con mensaje precargado).
+- [ ] **Datos legales**: sustituir `[NIF/CIF]`, `[DOMICILIO]`, `[DATOS REGISTRALES]`, `[PLAZO DE CONSERVACIÓN]` y `[PROVEEDORES]` en las páginas legales.
+- [ ] **Fotografía de Erika**: sustituir el área reservada del bloque de la fundadora y completar su biografía en `content/home.ts`.
+- [ ] **Logotipo**: sustituir el wordmark tipográfico y el icono "D" provisional cuando exista logotipo definitivo.
+- [ ] **Redes**: rellenar LinkedIn/Instagram en `config/site.ts` (aparecen en el JSON-LD).
+- [ ] **Resend**: crear cuenta, verificar dominio de envío y configurar `RESEND_API_KEY` y `EMAIL_FROM`.
+- [ ] **Formularios**: prueba real de los dos formularios con Resend configurado (recepción + confirmaciones + CV adjunto).
+- [ ] **Textos legales**: revisión por un profesional antes de publicar.
+- [ ] **Favicons**: revisar icono provisional en navegadores; sustituir si llega logotipo definitivo.
+- [ ] **Imágenes**: añadir fotografías reales y profesionales cuando existan (con `alt` descriptivo).
+- [ ] **Pruebas móviles**: revisión final en dispositivos reales (iOS/Android).
+- [ ] **GitHub**: mergear la rama de desarrollo a la rama principal.
+- [ ] **Vercel**: crear el proyecto, configurar variables y desplegar.
+- [ ] **DNS**: apuntar el dominio a Vercel según sus instrucciones.
+- [ ] **SPF**: registro TXT de SPF que indica Resend al verificar el dominio.
+- [ ] **DKIM**: registros DKIM de Resend.
+- [ ] **DMARC**: publicar política DMARC (p. ej. `v=DMARC1; p=none; rua=mailto:…`) y endurecerla cuando el envío esté estable.

@@ -6,9 +6,8 @@ export const metadata: Metadata = {
   title: "Política de privacidad",
   description:
     "Política de privacidad del sitio web de DANAE: cómo tratamos los datos personales de las personas que nos contactan.",
+  alternates: { canonical: "/privacidad" },
 };
-
-const pendingValue = "[Pendiente de completar]";
 
 export default function PrivacyPage() {
   return (
@@ -28,8 +27,10 @@ export default function PrivacyPage() {
         <section className="mt-10">
           <h2 className="font-serif text-xl">Responsable del tratamiento</h2>
           <ul className="mt-3 space-y-2 leading-relaxed text-muted">
-            <li>Responsable: {siteConfig.legalName || pendingValue}</li>
-            <li>Email de contacto: {siteConfig.email || pendingValue}</li>
+            <li>Responsable: {siteConfig.legalName || "[NOMBRE]"}</li>
+            <li>NIF/CIF: [NIF/CIF]</li>
+            <li>Domicilio: [DOMICILIO]</li>
+            <li>Correo electrónico: {siteConfig.email || "[CORREO]"}</li>
           </ul>
         </section>
 
@@ -58,7 +59,8 @@ export default function PrivacyPage() {
           <p className="mt-3 leading-relaxed text-muted">
             No se ceden datos a terceros, salvo obligación legal. Para el envío
             de los formularios se utilizan proveedores de servicios técnicos de
-            correo electrónico que actúan como encargados del tratamiento.
+            correo electrónico que actúan como encargados del tratamiento:
+            [PROVEEDORES].
           </p>
         </section>
 
@@ -66,8 +68,8 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-xl">Conservación</h2>
           <p className="mt-3 leading-relaxed text-muted">
             Los datos se conservan durante el tiempo necesario para atender tu
-            solicitud y, después, durante los plazos exigidos por la normativa
-            aplicable.
+            solicitud y, como máximo, durante [PLAZO DE CONSERVACIÓN], sin
+            perjuicio de los plazos exigidos por la normativa aplicable.
           </p>
         </section>
 

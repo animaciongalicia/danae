@@ -5,9 +5,8 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Aviso legal",
   description: "Aviso legal y condiciones de uso del sitio web de DANAE.",
+  alternates: { canonical: "/aviso-legal" },
 };
-
-const pendingValue = "[Pendiente de completar]";
 
 export default function LegalNoticePage() {
   return (
@@ -24,10 +23,12 @@ export default function LegalNoticePage() {
           </p>
           <ul className="mt-4 space-y-2 leading-relaxed text-muted">
             <li>Denominación: {siteConfig.name}</li>
-            <li>Razón social: {siteConfig.legalName || pendingValue}</li>
-            <li>NIF: {pendingValue}</li>
-            <li>Domicilio: {pendingValue} ({siteConfig.location})</li>
-            <li>Email de contacto: {siteConfig.email || pendingValue}</li>
+            <li>Titular: {siteConfig.legalName || "[NOMBRE]"}</li>
+            <li>NIF/CIF: [NIF/CIF]</li>
+            <li>Domicilio: [DOMICILIO] ({siteConfig.location})</li>
+            <li>Correo electrónico: {siteConfig.email || "[CORREO]"}</li>
+            <li>Teléfono: {siteConfig.phone || "[TELÉFONO]"}</li>
+            <li>Datos registrales: [DATOS REGISTRALES]</li>
           </ul>
         </section>
 

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Política de cookies",
   description:
     "Política de cookies del sitio web de DANAE: este sitio no utiliza cookies de análisis, publicidad ni seguimiento.",
+  alternates: { canonical: "/cookies" },
 };
 
 export default function CookiesPage() {
