@@ -1,5 +1,6 @@
 import type { Sector } from "@/types";
 
+// Provisional copy for design evaluation; refine wording in later phases.
 export const sectorsPageContent = {
   eyebrow: "Sectores",
   title: "Dónde trabajamos",
@@ -9,39 +10,51 @@ export const sectorsPageContent = {
 
 export const sectors: Sector[] = [
   {
-    id: "eventos",
-    title: "Eventos",
-    description:
-      "Equipos completos para eventos corporativos y sociales: acreditación, atención a asistentes, apoyo de sala y coordinación de la operación.",
-  },
-  {
     id: "festivales-y-conciertos",
     title: "Festivales y conciertos",
     description:
-      "Personal organizado por zonas y turnos, con jefes de equipo y supervisión, para operaciones de gran volumen que no admiten improvisación.",
+      "Operaciones de gran volumen organizadas por zonas y turnos, con jefes de equipo, barras gestionadas y supervisión durante todo el evento.",
   },
   {
     id: "congresos-y-ferias",
     title: "Congresos y ferias",
     description:
-      "Azafatas y azafatos de congreso, personal de stand y apoyo organizativo, con protocolo claro y una imagen alineada con tu marca.",
+      "Equipos de acreditación, sala y stand con protocolo claro y una imagen alineada con el evento y con las marcas participantes.",
   },
   {
-    id: "hosteleria-y-restauracion",
-    title: "Hostelería, bares y catering",
+    id: "empresas-y-oficinas",
+    title: "Empresas y oficinas",
     description:
-      "Equipos de sala, barra y catering con experiencia, organizados por servicio y con responsables definidos para cada operación.",
+      "Perfiles administrativos, de recepción y de atención al cliente para estructurar o reforzar la operación diaria de la empresa.",
   },
   {
-    id: "activaciones-de-marca",
-    title: "Activaciones de marca",
+    id: "hosteleria-y-hoteles",
+    title: "Hostelería y hoteles",
     description:
-      "Promotores y embajadores de marca seleccionados y formados para representar tu producto con criterio y profesionalidad.",
+      "Equipos de sala, barra y catering organizados por servicio, con responsables definidos y capacidad de refuerzo en picos de actividad.",
   },
   {
-    id: "entornos-corporativos",
-    title: "Entornos corporativos y atención al cliente",
+    id: "comercio-y-promociones",
+    title: "Comercio y promociones",
     description:
-      "Roles administrativos, de recepción y de atención al cliente para empresas que necesitan reforzar o estructurar su operación diaria.",
+      "Promotores, personal comercial y refuerzos de tienda seleccionados y preparados para representar la marca en el punto de venta.",
+  },
+  {
+    id: "deporte-y-entretenimiento",
+    title: "Deporte y entretenimiento",
+    description:
+      "Personal de accesos, atención al público y servicios auxiliares para recintos deportivos y espacios de ocio con gran afluencia.",
+  },
+  {
+    id: "agencias-y-productoras",
+    title: "Agencias y productoras",
+    description:
+      "Un partner operativo estable para agencias de eventos y productoras: equipos completos con coordinación e interlocutor único.",
+  },
+  {
+    id: "administraciones-publicas",
+    title: "Administraciones públicas",
+    description:
+      "Equipos de atención al público y apoyo organizativo para actos, eventos y servicios promovidos por administraciones.",
   },
 ];

@@ -6,14 +6,21 @@ export interface NavigationItem {
 export interface Service {
   id: string;
   title: string;
-  shortDescription: string;
 }
 
-export interface Solution {
+export interface SolutionBlock {
+  id: string;
+  title: string;
+  problem: string;
+  solution: string;
+  result: string;
+}
+
+export interface SolutionGroup {
   id: string;
   title: string;
   description: string;
-  points: string[];
+  items: SolutionBlock[];
 }
 
 export interface Sector {
@@ -30,4 +37,10 @@ export interface ProcessStep {
 export interface Benefit {
   title: string;
   description: string;
+}
+
+export interface BenefitGroup {
+  id: string;
+  title: string;
+  benefits: Benefit[];
 }
