@@ -7,6 +7,9 @@ import SectorsSection from "@/components/sections/SectorsSection";
 import DifferentialSection from "@/components/sections/DifferentialSection";
 import FounderSection from "@/components/sections/FounderSection";
 import CallToAction from "@/components/sections/CallToAction";
+import JsonLd from "@/components/seo/JsonLd";
+import { webPageJsonLd } from "@/lib/structuredData";
+import { siteConfig, siteDescription } from "@/config/site";
 import {
   homeOperationsContent,
   homeTalentContent,
@@ -42,6 +45,13 @@ export default function HomePage() {
       <DifferentialSection />
       <FounderSection />
       <CallToAction />
+      <JsonLd
+        data={webPageJsonLd({
+          title: `${siteConfig.name} — Soluciones de talento y operaciones`,
+          description: siteDescription,
+          path: "/",
+        })}
+      />
     </main>
   );
 }

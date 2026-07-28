@@ -4,12 +4,17 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import CallToAction from "@/components/sections/CallToAction";
+import JsonLd from "@/components/seo/JsonLd";
+import { webPageJsonLd } from "@/lib/structuredData";
 import { sectors, sectorsPageContent } from "@/content/sectors";
+
+const pageDescription =
+  "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias y administraciones públicas: cómo adapta DANAE sus equipos y operaciones a cada sector.";
 
 export const metadata: Metadata = {
   title: "Sectores donde trabajamos",
-  description:
-    "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias y administraciones públicas: cómo adapta DANAE sus equipos y operaciones a cada sector.",
+  description: pageDescription,
+  alternates: { canonical: "/sectores" },
 };
 
 export default function SectorsPage() {
@@ -60,6 +65,14 @@ export default function SectorsPage() {
       </section>
 
       <CallToAction />
+      <JsonLd
+        data={webPageJsonLd({
+          title: "Sectores donde trabajamos",
+          description: pageDescription,
+          path: "/sectores",
+          breadcrumbName: "Sectores",
+        })}
+      />
     </main>
   );
 }

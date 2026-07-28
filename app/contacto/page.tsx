@@ -4,6 +4,8 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactForm from "@/components/forms/ContactForm";
 import FaqSection from "@/components/sections/FaqSection";
+import JsonLd from "@/components/seo/JsonLd";
+import { faqJsonLd, webPageJsonLd } from "@/lib/structuredData";
 import { siteConfig } from "@/config/site";
 import {
   contactChannelsContent,
@@ -12,10 +14,13 @@ import {
   inquiryTypesContent,
 } from "@/content/contact";
 
+const pageDescription =
+  "Solicita una propuesta a DANAE: cuéntanos tu servicio, fechas y volumen, y te respondemos con una solución de talento y operaciones a medida. También por teléfono o WhatsApp.";
+
 export const metadata: Metadata = {
   title: "Contacto",
-  description:
-    "Solicita una propuesta a DANAE: cuéntanos tu servicio, fechas y volumen, y te respondemos con una solución de talento y operaciones a medida. También por teléfono o WhatsApp.",
+  description: pageDescription,
+  alternates: { canonical: "/contacto" },
 };
 
 export default function ContactPage() {
@@ -110,7 +115,7 @@ export default function ContactPage() {
                   {siteConfig.phone ? (
                     <a
                       href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                      className="inline-flex items-center justify-center rounded-full bg-accent-strong px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-strong"
+                      className="inline-flex items-center justify-center rounded-full bg-accent-strong px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-strong"
                     >
                       {contactChannelsContent.phoneLabel}
                     </a>
@@ -138,6 +143,15 @@ export default function ContactPage() {
       </section>
 
       <FaqSection />
+      <JsonLd
+        data={webPageJsonLd({
+          title: "Contacto",
+          description: pageDescription,
+          path: "/contacto",
+          breadcrumbName: "Contacto",
+        })}
+      />
+      <JsonLd data={faqJsonLd()} />
     </main>
   );
 }

@@ -3,13 +3,18 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CallToAction from "@/components/sections/CallToAction";
+import JsonLd from "@/components/seo/JsonLd";
+import { servicesJsonLd, webPageJsonLd } from "@/lib/structuredData";
 import { solutionGroups, solutionsPageContent } from "@/content/solutions";
 import type { SolutionBlock } from "@/types";
 
+const pageDescription =
+  "Selección de perfiles, mandos intermedios, refuerzos y formación; barras, festivales, congresos, promociones y recintos deportivos. Así resuelve DANAE cada servicio.";
+
 export const metadata: Metadata = {
   title: "Soluciones de talento y operaciones",
-  description:
-    "Selección de perfiles, mandos intermedios, refuerzos y formación; barras, festivales, congresos, promociones y recintos deportivos. Así resuelve DANAE cada servicio.",
+  description: pageDescription,
+  alternates: { canonical: "/soluciones" },
 };
 
 function SolutionBlockCard({ block }: { block: SolutionBlock }) {
@@ -18,19 +23,19 @@ function SolutionBlockCard({ block }: { block: SolutionBlock }) {
       <h3 className="font-serif text-xl">{block.title}</h3>
       <dl className="mt-4 flex-1 space-y-4 text-sm leading-relaxed">
         <div>
-          <dt className="font-medium uppercase tracking-widest text-accent">
+          <dt className="font-medium uppercase tracking-widest text-accent-strong">
             El problema
           </dt>
           <dd className="mt-1 text-muted">{block.problem}</dd>
         </div>
         <div>
-          <dt className="font-medium uppercase tracking-widest text-accent">
+          <dt className="font-medium uppercase tracking-widest text-accent-strong">
             Qué hace Danae
           </dt>
           <dd className="mt-1 text-muted">{block.action}</dd>
         </div>
         <div>
-          <dt className="font-medium uppercase tracking-widest text-accent">
+          <dt className="font-medium uppercase tracking-widest text-accent-strong">
             Qué puede incluir
           </dt>
           <dd className="mt-1">
@@ -47,7 +52,7 @@ function SolutionBlockCard({ block }: { block: SolutionBlock }) {
           </dd>
         </div>
         <div>
-          <dt className="font-medium uppercase tracking-widest text-accent">
+          <dt className="font-medium uppercase tracking-widest text-accent-strong">
             El resultado que buscamos
           </dt>
           <dd className="mt-1 text-muted">{block.result}</dd>
@@ -123,6 +128,15 @@ export default function SolutionsPage() {
       </section>
 
       <CallToAction />
+      <JsonLd
+        data={webPageJsonLd({
+          title: "Soluciones de talento y operaciones",
+          description: pageDescription,
+          path: "/soluciones",
+          breadcrumbName: "Soluciones",
+        })}
+      />
+      <JsonLd data={servicesJsonLd()} />
     </main>
   );
 }

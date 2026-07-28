@@ -3,6 +3,8 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CandidateForm from "@/components/forms/CandidateForm";
+import JsonLd from "@/components/seo/JsonLd";
+import { webPageJsonLd } from "@/lib/structuredData";
 import {
   candidateExpectationsContent,
   candidateFormContent,
@@ -12,10 +14,13 @@ import {
   candidateValuesContent,
 } from "@/content/candidates";
 
+const pageDescription =
+  "Envía tu candidatura a DANAE: personal de barra y sala, azafatas y azafatos, promotores, administrativos, recepcionistas y mandos intermedios para servicios bien organizados.";
+
 export const metadata: Metadata = {
   title: "Trabaja con Danae",
-  description:
-    "Envía tu candidatura a DANAE: personal de barra y sala, azafatas y azafatos, promotores, administrativos, recepcionistas y mandos intermedios para servicios bien organizados.",
+  description: pageDescription,
+  alternates: { canonical: "/trabaja-con-danae" },
 };
 
 export default function WorkWithDanaePage() {
@@ -140,6 +145,14 @@ export default function WorkWithDanaePage() {
           </div>
         </Container>
       </section>
+      <JsonLd
+        data={webPageJsonLd({
+          title: "Trabaja con Danae",
+          description: pageDescription,
+          path: "/trabaja-con-danae",
+          breadcrumbName: "Trabaja con Danae",
+        })}
+      />
     </main>
   );
 }
