@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -6,9 +7,9 @@ import CallToAction from "@/components/sections/CallToAction";
 import { sectors, sectorsPageContent } from "@/content/sectors";
 
 export const metadata: Metadata = {
-  title: "Sectores",
+  title: "Sectores donde trabajamos",
   description:
-    "Festivales y conciertos, congresos y ferias, empresas, hostelería y hoteles, comercio, deporte, agencias y administraciones públicas: los sectores donde trabaja DANAE.",
+    "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias y administraciones públicas: cómo adapta DANAE sus equipos y operaciones a cada sector.",
 };
 
 export default function SectorsPage() {
@@ -28,15 +29,33 @@ export default function SectorsPage() {
       <section className="py-16 sm:py-20">
         <Container>
           <h2 className="sr-only">Sectores en los que trabajamos</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {sectors.map((sector) => (
               <ServiceCard
                 key={sector.id}
                 title={sector.title}
                 description={sector.description}
+                points={sector.highlights}
               />
             ))}
           </div>
+          <p className="mt-12 text-center text-muted">
+            ¿No ves tu sector? El método se adapta:{" "}
+            <Link
+              href="/contacto"
+              className="font-medium text-accent-strong underline-offset-4 hover:underline"
+            >
+              cuéntanos tu caso
+            </Link>{" "}
+            o revisa nuestras{" "}
+            <Link
+              href="/soluciones"
+              className="font-medium text-accent-strong underline-offset-4 hover:underline"
+            >
+              soluciones de talento y operaciones
+            </Link>
+            .
+          </p>
         </Container>
       </section>
 

@@ -12,7 +12,8 @@ export interface SolutionBlock {
   id: string;
   title: string;
   problem: string;
-  solution: string;
+  action: string;
+  includes: string[];
   result: string;
 }
 
@@ -27,6 +28,7 @@ export interface Sector {
   id: string;
   title: string;
   description: string;
+  highlights: string[];
 }
 
 export interface ProcessStep {
@@ -34,13 +36,13 @@ export interface ProcessStep {
   description: string;
 }
 
-export interface Benefit {
-  title: string;
-  description: string;
-}
-
 export interface BenefitGroup {
   id: string;
   title: string;
-  benefits: Benefit[];
+  items: string[];
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
