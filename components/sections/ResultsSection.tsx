@@ -17,16 +17,14 @@ export default function ResultsSection() {
               <h3 className="border-b border-border pb-3 text-sm font-medium uppercase tracking-widest text-accent">
                 {group.title}
               </h3>
-              <dl className="mt-6 space-y-7">
-                {group.benefits.map((benefit) => (
-                  <div key={benefit.title}>
-                    <dt className="font-serif text-xl">{benefit.title}</dt>
-                    <dd className="mt-2 leading-relaxed text-muted">
-                      {benefit.description}
-                    </dd>
-                  </div>
+              <ul className="mt-6 space-y-3">
+                {group.items.map((item) => (
+                  <li key={item} className="flex gap-3 leading-relaxed text-muted">
+                    <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </dl>
+              </ul>
             </div>
           ))}
         </div>
