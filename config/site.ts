@@ -2,7 +2,7 @@
 // Missing values stay empty on purpose: do not invent legal or contact data.
 export const siteConfig = {
   name: "DANAE Talent",
-  legalName: "",
+  legalName: "DANAE",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
   email: "",
   candidateEmail: "",
