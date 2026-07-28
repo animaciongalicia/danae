@@ -3,6 +3,7 @@ import ProblemSection from "@/components/sections/ProblemSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
 import ResultsSection from "@/components/sections/ResultsSection";
 import ProcessSection from "@/components/sections/ProcessSection";
+import PhotoStrip from "@/components/sections/PhotoStrip";
 import SectorsSection from "@/components/sections/SectorsSection";
 import DifferentialSection from "@/components/sections/DifferentialSection";
 import FounderSection from "@/components/sections/FounderSection";
@@ -14,10 +15,6 @@ import {
   homeOperationsContent,
   homeTalentContent,
 } from "@/content/home";
-import {
-  operationalSolutionsGroup,
-  talentSolutionsGroup,
-} from "@/content/solutions";
 
 export default function HomePage() {
   return (
@@ -28,7 +25,7 @@ export default function HomePage() {
         eyebrow={homeTalentContent.eyebrow}
         title={homeTalentContent.title}
         description={homeTalentContent.description}
-        items={talentSolutionsGroup.items}
+        items={homeTalentContent.items}
         cta={homeTalentContent.cta}
         tone="surface"
       />
@@ -36,11 +33,12 @@ export default function HomePage() {
         eyebrow={homeOperationsContent.eyebrow}
         title={homeOperationsContent.title}
         description={homeOperationsContent.description}
-        items={operationalSolutionsGroup.items}
+        items={homeOperationsContent.items}
         cta={homeOperationsContent.cta}
       />
       <ResultsSection />
       <ProcessSection />
+      <PhotoStrip />
       <SectorsSection />
       <DifferentialSection />
       <FounderSection />

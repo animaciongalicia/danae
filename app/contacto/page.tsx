@@ -31,7 +31,7 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
-        <Container className="py-16 sm:py-20">
+        <Container className="py-12 sm:py-16">
           <SectionHeading
             as="h1"
             eyebrow={contactPageContent.eyebrow}
@@ -48,7 +48,7 @@ export default function ContactPage() {
             {inquiryTypesContent.map((type) => (
               <div
                 key={type.id}
-                className="flex h-full flex-col rounded-card border border-border bg-white/60 p-8"
+                className="flex h-full flex-col rounded-card border border-border bg-white/60 p-8 shadow-sm"
               >
                 <h3 className="font-serif text-xl">{type.title}</h3>
                 <p className="mt-3 flex-1 leading-relaxed text-muted">
@@ -68,7 +68,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section id="formulario" className="scroll-mt-24 pb-16 sm:pb-20">
+      <section id="formulario" className="scroll-mt-24 pb-12 sm:pb-16">
         <Container>
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">

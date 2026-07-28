@@ -45,11 +45,22 @@ export const positioningContent = {
     "Nuestro trabajo empieza antes de la selección y termina después del servicio: entendemos la necesidad, definimos las funciones, construimos el equipo, organizamos horarios y responsabilidades, y supervisamos la ejecución.",
 };
 
+// Short one-line labels for the home grids; full titles live in content/solutions.ts.
 export const homeTalentContent = {
   eyebrow: "Soluciones de talento",
   title: "Las personas adecuadas para cada función",
   description:
     "Selección con criterio, mandos intermedios, perfiles administrativos y de atención al cliente, refuerzos, formación y bolsas de talento propias: el plano humano del servicio, bien resuelto.",
+  items: [
+    { id: "seleccion-de-perfiles", title: "Selección de perfiles" },
+    { id: "mandos-intermedios", title: "Mandos intermedios" },
+    { id: "administracion-y-secretariado", title: "Administración" },
+    { id: "recepcion", title: "Recepción" },
+    { id: "atencion-al-cliente", title: "Atención al cliente" },
+    { id: "personal-comercial", title: "Personal comercial" },
+    { id: "refuerzos", title: "Refuerzos" },
+    { id: "formacion-e-incorporacion", title: "Formación" },
+  ],
   cta: { label: "Ver soluciones de talento", href: "/soluciones" },
 };
 
@@ -58,7 +69,26 @@ export const homeOperationsContent = {
   title: "Operaciones completas, no solo personas",
   description:
     "Barras, festivales, congresos, hostelería, promociones y recintos deportivos: diseñamos la operación, la coordinamos con responsables en cada equipo y la supervisamos de principio a fin.",
+  items: [
+    { id: "gestion-integral-de-barras", title: "Gestión de barras" },
+    { id: "festivales-y-conciertos", title: "Festivales y conciertos" },
+    { id: "congresos-y-ferias", title: "Congresos y ferias" },
+    { id: "hosteleria", title: "Hostelería" },
+    { id: "promociones-y-activaciones", title: "Promociones" },
+    { id: "atencion-a-asistentes", title: "Atención a asistentes" },
+    { id: "servicios-auxiliares", title: "Servicios auxiliares" },
+    { id: "recintos-deportivos", title: "Recintos deportivos" },
+  ],
   cta: { label: "Ver soluciones operativas", href: "/soluciones" },
+};
+
+export const photoStripContent = {
+  title: "DANAE en servicio",
+  photos: [
+    { id: "barra", caption: "Montaje y servicio de barra" },
+    { id: "congreso", caption: "Acreditación de congreso" },
+    { id: "sala", caption: "Equipo de sala en servicio" },
+  ],
 };
 
 export const processContent = {

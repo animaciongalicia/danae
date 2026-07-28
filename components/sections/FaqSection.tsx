@@ -4,7 +4,7 @@ import { faqContent } from "@/content/faq";
 
 export default function FaqSection() {
   return (
-    <section className="border-t border-border bg-surface py-16 sm:py-20">
+    <section className="border-t border-border bg-surface py-12 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow={faqContent.eyebrow}

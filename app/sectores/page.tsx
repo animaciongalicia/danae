@@ -21,7 +21,7 @@ export default function SectorsPage() {
   return (
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
-        <Container className="py-16 sm:py-20">
+        <Container className="py-12 sm:py-16">
           <SectionHeading
             as="h1"
             eyebrow={sectorsPageContent.eyebrow}
@@ -31,7 +31,7 @@ export default function SectorsPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
         <Container>
           <h2 className="sr-only">Sectores en los que trabajamos</h2>
           <div className="grid gap-6 md:grid-cols-2">

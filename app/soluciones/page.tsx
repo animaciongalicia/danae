@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 function SolutionBlockCard({ block }: { block: SolutionBlock }) {
   return (
-    <article className="flex h-full flex-col rounded-card border border-border bg-white/60 p-8">
+    <article className="flex h-full flex-col rounded-card border border-border bg-white/60 p-8 shadow-sm">
       <h3 className="font-serif text-xl">{block.title}</h3>
       <dl className="mt-4 flex-1 space-y-4 text-sm leading-relaxed">
         <div>
@@ -33,23 +33,6 @@ function SolutionBlockCard({ block }: { block: SolutionBlock }) {
             Qué hace Danae
           </dt>
           <dd className="mt-1 text-muted">{block.action}</dd>
-        </div>
-        <div>
-          <dt className="font-medium uppercase tracking-widest text-accent-strong">
-            Qué puede incluir
-          </dt>
-          <dd className="mt-1">
-            <ul className="space-y-1 text-muted">
-              {block.includes.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span aria-hidden="true" className="text-accent">
-                    —
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </dd>
         </div>
         <div>
           <dt className="font-medium uppercase tracking-widest text-accent-strong">
@@ -74,7 +57,7 @@ export default function SolutionsPage() {
   return (
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
-        <Container className="py-16 sm:py-20">
+        <Container className="py-12 sm:py-16">
           <SectionHeading
             as="h1"
             eyebrow={solutionsPageContent.eyebrow}
@@ -89,8 +72,8 @@ export default function SolutionsPage() {
           key={group.id}
           className={
             index % 2 === 1
-              ? "border-y border-border bg-surface py-16 sm:py-20"
-              : "py-16 sm:py-20"
+              ? "border-y border-border bg-surface py-12 sm:py-16"
+              : "py-12 sm:py-16"
           }
         >
           <Container>
@@ -104,7 +87,7 @@ export default function SolutionsPage() {
         </section>
       ))}
 
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
         <Container>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-muted">
             ¿Tu necesidad encaja en varios bloques, o en ninguno del todo? Es lo

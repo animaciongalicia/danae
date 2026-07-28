@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="flex-1 py-16 sm:py-20">
+    <main className="flex-1 py-12 sm:py-16">
       <Container className="max-w-3xl">
         <h1 className="font-serif text-3xl sm:text-4xl">
           Política de privacidad

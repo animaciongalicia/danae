@@ -23,7 +23,7 @@ export default function SolutionsSection({
     tone === "surface" ? "border-y border-border bg-surface" : "";
 
   return (
-    <section className={`py-20 sm:py-24 ${toneClasses}`}>
+    <section className={`py-14 sm:py-16 ${toneClasses}`}>
       <Container>
         <SectionHeading
           eyebrow={eyebrow}

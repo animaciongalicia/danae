@@ -17,7 +17,7 @@ export const faqContent = {
     {
       question: "¿En qué sectores trabaja?",
       answer:
-        "Festivales y conciertos, congresos y ferias, empresas y oficinas, hostelería y hoteles, comercio y promociones, deporte y entretenimiento, agencias y productoras, y administraciones públicas. Tienes el detalle en la página de sectores.",
+        "Festivales y conciertos, congresos y ferias, empresas y oficinas, hostelería y hoteles, comercio y promociones, deporte y entretenimiento, agencias de marketing, productoras audiovisuales y administraciones públicas. Tienes el detalle en la página de sectores.",
     },
     {
       question: "¿Puede gestionar solamente una parte del servicio?",

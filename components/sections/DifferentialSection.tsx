@@ -4,7 +4,7 @@ import { differentialContent } from "@/content/home";
 
 export default function DifferentialSection() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-14 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow={differentialContent.eyebrow}
@@ -14,7 +14,7 @@ export default function DifferentialSection() {
           {differentialContent.points.map((point) => (
             <li
               key={point.title}
-              className="rounded-card border border-border bg-white/50 p-8"
+              className="rounded-card border border-border bg-white/50 p-8 shadow-sm"
             >
               <h3 className="font-serif text-xl">{point.title}</h3>
               <p className="mt-3 leading-relaxed text-muted">

@@ -4,7 +4,7 @@ import { problemContent } from "@/content/home";
 
 export default function ProblemSection() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-14 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow={problemContent.eyebrow}

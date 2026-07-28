@@ -5,7 +5,7 @@ import { sectors, sectorsPageContent } from "@/content/sectors";
 
 export default function SectorsSection() {
   return (
-    <section className="border-y border-border bg-surface py-20 sm:py-24">
+    <section className="border-y border-border bg-surface py-14 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow={sectorsPageContent.eyebrow}

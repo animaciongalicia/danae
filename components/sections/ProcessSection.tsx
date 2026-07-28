@@ -4,7 +4,7 @@ import { processContent } from "@/content/home";
 
 export default function ProcessSection() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-14 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow={processContent.eyebrow}

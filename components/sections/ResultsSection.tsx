@@ -4,12 +4,13 @@ import { resultsContent } from "@/content/home";
 
 export default function ResultsSection() {
   return (
-    <section className="border-y border-border bg-accent-soft/60 py-20 sm:py-24">
+    <section className="border-y border-border bg-accent-soft/60 py-14 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow={resultsContent.eyebrow}
           title={resultsContent.title}
           description={resultsContent.description}
+          wide
         />
         <div className="mt-12 grid gap-10 md:grid-cols-3">
           {resultsContent.groups.map((group) => (

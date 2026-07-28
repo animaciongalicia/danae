@@ -4,7 +4,7 @@ import { callToActionContent } from "@/content/home";
 
 export default function CallToAction() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-14 sm:py-16">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl leading-tight text-balance sm:text-4xl">

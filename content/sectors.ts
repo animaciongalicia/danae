@@ -75,14 +75,25 @@ export const sectors: Sector[] = [
     ],
   },
   {
-    id: "agencias-y-productoras",
-    title: "Agencias y productoras",
+    id: "agencias-de-marketing",
+    title: "Agencias de marketing y eventos",
     description:
-      "Si organizas eventos para terceros, necesitas un partner operativo que responda, no un proveedor más al que perseguir. Trabajamos como extensión de tu equipo, con interlocutor único y capacidad de repetir en cada proyecto.",
+      "Si organizas eventos y acciones para terceros, necesitas un partner operativo que responda, no un proveedor más al que perseguir. Trabajamos como extensión de tu equipo, con interlocutor único y capacidad de repetir en cada proyecto.",
     highlights: [
       "Equipos completos para los eventos de tus clientes.",
       "Interlocutor único por proyecto.",
       "Capacidad de trabajar en distintas plazas.",
+    ],
+  },
+  {
+    id: "productoras-audiovisuales",
+    title: "Productoras audiovisuales",
+    description:
+      "Un rodaje o una producción concentra a mucha gente con horarios exigentes. Aportamos equipos de apoyo organizados que cuidan la logística del día a día para que la producción se centre en grabar.",
+    highlights: [
+      "Auxiliares y apoyo de producción en set.",
+      "Atención al equipo y a los invitados del rodaje.",
+      "Organización de accesos y zonas de trabajo.",
     ],
   },
   {

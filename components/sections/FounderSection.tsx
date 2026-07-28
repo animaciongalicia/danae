@@ -3,7 +3,7 @@ import { founderContent } from "@/content/home";
 
 export default function FounderSection() {
   return (
-    <section className="border-y border-border bg-accent-soft/60 py-20 sm:py-24">
+    <section className="border-y border-border bg-accent-soft/60 py-14 sm:py-16">
       <Container>
         <div className="grid items-center gap-12 md:grid-cols-5">
           {/* Reserved visual area until a real portrait is available. */}
