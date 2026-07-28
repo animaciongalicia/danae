@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CandidateForm from "@/components/forms/CandidateForm";
+import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import JsonLd from "@/components/seo/JsonLd";
 import { webPageJsonLd } from "@/lib/structuredData";
 import {
@@ -27,7 +28,7 @@ export default function WorkWithDanaePage() {
   return (
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
-        <Container className="py-16 sm:py-20">
+        <Container className="py-12 sm:py-16">
           <SectionHeading
             as="h1"
             eyebrow={candidatesPageContent.eyebrow}
@@ -37,7 +38,7 @@ export default function WorkWithDanaePage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
@@ -55,6 +56,11 @@ export default function WorkWithDanaePage() {
                   </li>
                 ))}
               </ul>
+              <PhotoPlaceholder
+                aspect="3/2"
+                label="Equipo DANAE en un servicio real"
+                className="mt-8"
+              />
             </div>
             <div>
               <h2 className="font-serif text-2xl">
@@ -75,14 +81,14 @@ export default function WorkWithDanaePage() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-surface py-16 sm:py-20">
+      <section className="border-y border-border bg-surface py-12 sm:py-16">
         <Container>
           <SectionHeading title={candidateExpectationsContent.title} />
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {candidateExpectationsContent.items.map((item) => (
               <div
                 key={item.title}
-                className="rounded-card border border-border bg-white/60 p-8"
+                className="rounded-card border border-border bg-white/60 p-8 shadow-sm"
               >
                 <h3 className="font-serif text-xl">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -94,7 +100,7 @@ export default function WorkWithDanaePage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading
             title={candidateResponsibilityContent.title}
@@ -104,7 +110,7 @@ export default function WorkWithDanaePage() {
             {candidateResponsibilityContent.levels.map((level, index) => (
               <li
                 key={level.title}
-                className="rounded-card border border-border bg-white/60 p-8"
+                className="rounded-card border border-border bg-white/60 p-8 shadow-sm"
               >
                 <span aria-hidden="true" className="font-serif text-3xl text-accent">
                   {String(index + 1).padStart(2, "0")}
@@ -121,7 +127,7 @@ export default function WorkWithDanaePage() {
 
       <section
         id="candidatura"
-        className="scroll-mt-24 border-t border-border bg-surface py-16 sm:py-20"
+        className="scroll-mt-24 border-t border-border bg-surface py-12 sm:py-16"
       >
         <Container>
           <div className="mx-auto max-w-2xl">
