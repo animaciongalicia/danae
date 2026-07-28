@@ -99,6 +99,30 @@ export const candidateResponsibilityContent = {
   ],
 };
 
+export const candidateProfileOptions = [
+  "Personal de barra",
+  "Personal de sala",
+  "Responsable o mando intermedio",
+  "Coordinador/a",
+  "Promotor/a",
+  "Azafata/o",
+  "Administrativo/a",
+  "Recepcionista",
+  "Atención al cliente",
+  "Comercial",
+  "Auxiliar",
+  "Otro perfil",
+] as const;
+
+export const responsibilityLevelOptions = [
+  "Personal operativo",
+  "Responsable de equipo",
+  "Coordinador",
+  "Dirección de servicio",
+] as const;
+
+export const yesNoOptions = ["Sí", "No"] as const;
+
 export const candidateFormContent = {
   title: "Envía tu candidatura",
   description:

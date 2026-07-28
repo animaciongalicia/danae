@@ -33,6 +33,18 @@ export const contactChannelsContent = {
     "Los botones de llamada y WhatsApp se activarán al configurar el teléfono en la configuración del sitio.",
 };
 
+export const needTypeOptions = [
+  "Selección de talento",
+  "Gestión de un equipo",
+  "Operación de un evento",
+  "Gestión de barras",
+  "Congreso o feria",
+  "Refuerzo de hostelería",
+  "Promoción o campaña",
+  "Personal para empresa",
+  "Otra necesidad",
+] as const;
+
 export const contactFormIntroContent = {
   title: "Necesito una solución",
   description:

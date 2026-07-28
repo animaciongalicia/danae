@@ -1,58 +1,56 @@
 import { NextResponse } from "next/server";
-import { services } from "@/config/services";
 import {
-  getCandidateEmail,
   getContactEmail,
   isEmailConfigured,
+  sendConfirmationEmail,
   sendEmail,
 } from "@/lib/email";
-import { formSubmissionSchema, type FormSubmission } from "@/lib/validation";
+import {
+  getClientKey,
+  isRateLimited,
+  rateLimitMessage,
+} from "@/lib/rateLimit";
+import {
+  commercialFormSchema,
+  getFieldErrors,
+  type CommercialFormData,
+} from "@/lib/validation";
 
 const notConfiguredMessage =
   "El envío de formularios aún no está disponible. Disculpa las molestias e inténtalo más adelante.";
 
-function buildEmailContent(submission: FormSubmission): {
-  subject: string;
-  text: string;
-} {
-  if (submission.formType === "empresa") {
-    const service = services.find((item) => item.id === submission.serviceId);
-    const lines = [
-      "Nueva solicitud de contacto de empresa",
-      "",
-      `Nombre: ${submission.name}`,
-      `Empresa: ${submission.company}`,
-      `Email: ${submission.email}`,
-      submission.phone ? `Teléfono: ${submission.phone}` : null,
-      service ? `Solución de interés: ${service.title}` : null,
-      "",
-      "Mensaje:",
-      submission.message,
-    ];
-    return {
-      subject: `Contacto web — ${submission.company}`,
-      text: lines.filter((line) => line !== null).join("\n"),
-    };
-  }
+const sendFailedMessage =
+  "No se ha podido enviar la solicitud. Inténtalo de nuevo en unos minutos.";
 
+function buildEmailText(data: CommercialFormData): string {
   const lines = [
-    "Nueva candidatura recibida desde la web",
+    "Nueva solicitud comercial recibida desde la web.",
     "",
-    `Nombre: ${submission.name}`,
-    `Email: ${submission.email}`,
-    submission.phone ? `Teléfono: ${submission.phone}` : null,
-    submission.location ? `Localidad: ${submission.location}` : null,
+    `Nombre: ${data.name}`,
+    `Empresa: ${data.company}`,
+    data.role ? `Cargo: ${data.role}` : null,
+    `Teléfono: ${data.phone}`,
+    `Correo electrónico: ${data.email}`,
     "",
-    "Experiencia y disponibilidad:",
-    submission.message,
+    `Tipo de necesidad: ${data.needType}`,
+    data.plannedDate ? `Fecha prevista: ${data.plannedDate}` : null,
+    `Localización: ${data.location}`,
+    data.teamSize ? `Número aproximado de personas: ${data.teamSize}` : null,
+    "",
+    "Descripción de la necesidad:",
+    data.description,
+    "",
+    "Resultado que se quiere conseguir:",
+    data.expectedResult,
   ];
-  return {
-    subject: `Candidatura web — ${submission.name}`,
-    text: lines.filter((line) => line !== null).join("\n"),
-  };
+  return lines.filter((line) => line !== null).join("\n");
 }
 
 export async function POST(request: Request) {
+  if (isRateLimited(getClientKey(request))) {
+    return NextResponse.json({ error: rateLimitMessage }, { status: 429 });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -63,42 +61,51 @@ export async function POST(request: Request) {
     );
   }
 
-  const parsed = formSubmissionSchema.safeParse(body);
+  // Honeypot: bots that fill the hidden field get a fake success.
+  if (
+    typeof body === "object" &&
+    body !== null &&
+    "website" in body &&
+    typeof body.website === "string" &&
+    body.website.length > 0
+  ) {
+    return NextResponse.json({ ok: true });
+  }
+
+  const parsed = commercialFormSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json(
       {
-        error: "Revisa los campos del formulario.",
-        issues: parsed.error.issues.map((issue) => issue.message),
+        error: "Revisa los campos marcados del formulario.",
+        fields: getFieldErrors(parsed.error),
       },
       { status: 400 },
     );
   }
 
-  const submission = parsed.data;
-  const to =
-    submission.formType === "empresa" ? getContactEmail() : getCandidateEmail();
-
+  const to = getContactEmail();
   if (!isEmailConfigured() || !to) {
     return NextResponse.json({ error: notConfiguredMessage }, { status: 503 });
   }
 
-  const { subject, text } = buildEmailContent(submission);
   const result = await sendEmail({
     to,
-    subject,
-    replyTo: submission.email,
-    text,
+    subject: "Nueva solicitud comercial desde la web de DANAE",
+    text: buildEmailText(parsed.data),
+    replyTo: parsed.data.email,
   });
 
   if (!result.ok) {
-    return NextResponse.json(
-      {
-        error:
-          "No se ha podido enviar el mensaje. Inténtalo de nuevo en unos minutos.",
-      },
-      { status: 502 },
-    );
+    return NextResponse.json({ error: sendFailedMessage }, { status: 502 });
   }
+
+  await sendConfirmationEmail({
+    to: parsed.data.email,
+    subject: "Hemos recibido tu solicitud",
+    message:
+      "Hemos recibido tu solicitud. Revisaremos la información y contactaremos contigo.",
+    replyTo: to,
+  });
 
   return NextResponse.json({ ok: true });
 }
