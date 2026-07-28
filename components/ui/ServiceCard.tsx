@@ -10,7 +10,7 @@ export default function ServiceCard({
   points,
 }: ServiceCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-border bg-white/60 p-8">
+    <article className="flex h-full flex-col rounded-card border border-border bg-white/60 p-8">
       <h3 className="font-serif text-xl text-foreground">{title}</h3>
       <p className="mt-3 leading-relaxed text-muted">{description}</p>
       {points && points.length > 0 ? (

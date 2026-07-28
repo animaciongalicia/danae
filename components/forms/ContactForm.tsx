@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { services } from "@/config/services";
+import { serviceGroups } from "@/config/services";
 import { SubmitButton } from "@/components/ui/Button";
 import FormStatus, {
   type FormStatusState,
@@ -133,10 +133,14 @@ export default function ContactForm() {
           className={inputClasses}
         >
           <option value="">Todavía no lo tengo claro</option>
-          {services.map((service) => (
-            <option key={service.id} value={service.id}>
-              {service.title}
-            </option>
+          {serviceGroups.map((group) => (
+            <optgroup key={group.id} label={group.title}>
+              {group.items.map((service) => (
+                <option key={service.id} value={service.id}>
+                  {service.title}
+                </option>
+              ))}
+            </optgroup>
           ))}
         </select>
       </div>

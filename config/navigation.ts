@@ -12,9 +12,14 @@ export const ctaNavigation: NavigationItem = {
   href: "/trabaja-con-danae",
 };
 
+// Footer columns
+export const talentNavigation: NavigationItem[] = [
+  { label: "Trabaja con Danae", href: "/trabaja-con-danae" },
+  { label: "Privacidad de candidatos", href: "/privacidad-candidatos" },
+];
+
 export const legalNavigation: NavigationItem[] = [
   { label: "Aviso legal", href: "/aviso-legal" },
   { label: "Política de privacidad", href: "/privacidad" },
-  { label: "Privacidad para candidatos", href: "/privacidad-candidatos" },
   { label: "Política de cookies", href: "/cookies" },
 ];

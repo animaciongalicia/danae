@@ -8,7 +8,7 @@ import { sectors, sectorsPageContent } from "@/content/sectors";
 export const metadata: Metadata = {
   title: "Sectores",
   description:
-    "Eventos, festivales y conciertos, congresos y ferias, hostelería y catering, activaciones de marca y entornos corporativos: los sectores donde trabaja DANAE.",
+    "Festivales y conciertos, congresos y ferias, empresas, hostelería y hoteles, comercio, deporte, agencias y administraciones públicas: los sectores donde trabaja DANAE.",
 };
 
 export default function SectorsPage() {
