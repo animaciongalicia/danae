@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Brand design tokens: warm neutrals with a muted mauve accent. */
+:root {
+  --background: #fbf9f6;
+  --surface: #f4efe9;
+  --foreground: #2d2926;
+  --muted: #6e6560;
+  --border: #e7dfd7;
+  --accent: #9b6b7d;
+  --accent-strong: #7c4e60;
+  --accent-soft: #f1e6ea;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
