@@ -5,10 +5,14 @@ import { heroContent } from "@/content/home";
 import { sitePhotos } from "@/content/photos";
 
 export default function Hero() {
+  const hasPhoto = Boolean(sitePhotos.homeHero.src);
+
   return (
     <section className="border-b border-border bg-surface">
       <Container className="py-16 sm:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-5">
+        <div
+          className={`grid items-center gap-10 ${hasPhoto ? "lg:grid-cols-5" : ""}`}
+        >
           <div className="max-w-3xl lg:col-span-3">
             <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent-strong">
               {heroContent.eyebrow}
@@ -36,7 +40,8 @@ export default function Hero() {
             aspect="4/5"
             sizes="(max-width: 1024px) 100vw, 400px"
             priority
-            className="mx-auto hidden w-full max-w-sm lg:col-span-2 lg:block"
+            showCaption={false}
+            className="mx-auto w-full max-w-sm lg:col-span-2"
           />
         </div>
       </Container>

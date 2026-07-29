@@ -63,10 +63,11 @@ export default function WorkWithDanahePage() {
           </ul>
 
           <SitePhoto
-            photo={sitePhotos.candidatesTeam}
-            aspect="3/2"
-            sizes="(max-width: 1024px) 100vw, 1100px"
-            className="mt-10"
+            photo={sitePhotos.candidatesBand}
+            aspect="21/9"
+            sizes="(max-width: 1024px) 100vw, 900px"
+            fade
+            className="mx-auto mt-10 max-w-3xl"
           />
 
           <h2 className="mt-14 font-serif text-2xl">

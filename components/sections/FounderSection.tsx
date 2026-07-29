@@ -4,10 +4,14 @@ import { founderContent } from "@/content/home";
 import { sitePhotos } from "@/content/photos";
 
 export default function FounderSection() {
+  const hasPortrait = Boolean(sitePhotos.founder.src);
+
   return (
     <section className="border-y border-border bg-accent-soft/60 py-14 sm:py-16">
       <Container>
-        <div className="grid items-center gap-12 md:grid-cols-5">
+        <div
+          className={`grid items-center gap-12 ${hasPortrait ? "md:grid-cols-5" : ""}`}
+        >
           <SitePhoto
             photo={sitePhotos.founder}
             aspect="4/5"
@@ -15,7 +19,7 @@ export default function FounderSection() {
             showCaption={false}
             className="mx-auto w-full max-w-xs md:col-span-2"
           />
-          <div className="md:col-span-3">
+          <div className={hasPortrait ? "md:col-span-3" : "max-w-3xl"}>
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent-strong">
               {founderContent.eyebrow}
             </p>

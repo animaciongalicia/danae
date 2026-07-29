@@ -5,6 +5,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ContactForm from "@/components/forms/ContactForm";
 import FaqSection from "@/components/sections/FaqSection";
 import JsonLd from "@/components/seo/JsonLd";
+import SitePhoto from "@/components/ui/SitePhoto";
+import { sitePhotos } from "@/content/photos";
 import { faqJsonLd, webPageJsonLd } from "@/lib/structuredData";
 import { siteConfig } from "@/config/site";
 import {
@@ -137,6 +139,12 @@ export default function ContactPage() {
                   ) : null}
                 </div>
               </div>
+              <SitePhoto
+                photo={sitePhotos.contactAside}
+                aspect="4/5"
+                sizes="(max-width: 1024px) 100vw, 340px"
+                showCaption={false}
+              />
             </aside>
           </div>
         </Container>

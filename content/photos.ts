@@ -1,5 +1,5 @@
 export interface SitePhotoData {
-  /** Empty until the file exists in /public/images; the slot shows a placeholder meanwhile. */
+  /** Empty means the slot is not rendered at all: no placeholder in production. */
   src: string;
   alt: string;
   caption: string;
@@ -7,55 +7,54 @@ export interface SitePhotoData {
 
 // Every photo slot on the site. Filling `src` is all it takes to activate one.
 export const sitePhotos = {
+  // Home: hero, a band of vertical photos, a wide band and the founder portrait.
   homeHero: {
-    src: "",
-    alt: "Coordinadora de Danahe Talent revisando la operación de un servicio",
-    caption: "Coordinación de servicio",
-  },
-  founder: {
-    src: "",
-    alt: "Retrato de Erika Danahe, fundadora de Danahe Talent",
-    caption: "Erika Danahe",
-  },
-  candidatesTeam: {
-    src: "",
-    alt: "Equipo de coordinación con auriculares y tablets organizando los accesos de un festival",
-    caption: "Equipo de coordinación en un festival",
+    src: "/images/hero-home-danahe.png",
+    alt: "Coordinadora de Danahe Talent con tablet y walkie ante la barra de un festival, con el equipo preparando el servicio",
+    caption: "Coordinación de barra en festival",
   },
   strip: [
     {
-      src: "",
-      alt: "Coordinadora ante una barra de festival con el equipo preparando el servicio",
-      caption: "Montaje y servicio de barra",
-    },
-    {
-      src: "",
+      src: "/images/sector-congreso-medico.png",
       alt: "Mostrador de acreditaciones de un congreso con personal atendiendo a los asistentes",
       caption: "Acreditación de congreso",
     },
     {
-      src: "",
-      alt: "Personal de apoyo en un punto de avituallamiento durante una carrera popular",
+      src: "/images/sector-deportes-eventos.png",
+      alt: "Personal de apoyo atendiendo un punto de avituallamiento durante una carrera",
       caption: "Personal de apoyo en carrera",
     },
+    {
+      src: "",
+      alt: "Equipo de sala durante un servicio de hostelería",
+      caption: "Equipo de sala en servicio",
+    },
   ],
-} satisfies Record<string, SitePhotoData | SitePhotoData[]>;
+  founder: {
+    src: "/images/perfil-erika-danahe.png",
+    alt: "Retrato de Erika Danahe, fundadora de Danahe Talent",
+    caption: "Erika Danahe",
+  },
 
-// Sector photos, keyed by sector id. Sectors without an entry stay text-only.
-export const sectorPhotos: Record<string, SitePhotoData> = {
-  "festivales-y-conciertos": {
+  // One wide band per interior page: presence and warmth without a photo per item.
+  solutionsBand: {
     src: "",
-    alt: "Coordinadora con tablet y auricular frente a la barra de un festival al atardecer",
-    caption: "Coordinación de barra en festival",
+    alt: "Equipo de Danahe Talent coordinando un servicio sobre el terreno",
+    caption: "Equipos coordinados en servicio",
   },
-  "congresos-y-ferias": {
+  sectorsBand: {
+    src: "/images/sector-barras-festivales.png",
+    alt: "Responsable con auricular y tablet dando instrucciones al equipo de una barra de festival al atardecer",
+    caption: "Coordinación de una barra durante un festival",
+  },
+  candidatesBand: {
+    src: "/images/trabaja-con-danahe.png",
+    alt: "Equipo de coordinación con auriculares, walkies y tablets organizando los accesos de un festival",
+    caption: "Equipo de coordinación en un festival",
+  },
+  contactAside: {
     src: "",
-    alt: "Personal de acreditaciones atendiendo a asistentes en el hall de un congreso",
-    caption: "Acreditación y atención a asistentes",
+    alt: "Coordinadora de Danahe Talent atendiendo durante un servicio",
+    caption: "Hablamos y lo organizamos",
   },
-  "deporte-y-entretenimiento": {
-    src: "",
-    alt: "Personal de apoyo atendiendo un punto de avituallamiento en una carrera",
-    caption: "Punto de avituallamiento y atención al público",
-  },
-};
+} satisfies Record<string, SitePhotoData | SitePhotoData[]>;

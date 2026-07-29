@@ -5,7 +5,14 @@ const aspectClasses = {
   "4/5": "aspect-4/5",
   "4/3": "aspect-4/3",
   "3/2": "aspect-3/2",
+  // Wide bands used once per interior page.
+  "3/1": "aspect-[3/1]",
+  "21/9": "aspect-[21/9]",
 } as const;
+
+// Softens both sides into the page background; only for centred compositions.
+const fadeMask =
+  "[mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]";
 
 interface SitePhotoProps {
   photo: SitePhotoData;
@@ -15,11 +22,13 @@ interface SitePhotoProps {
   priority?: boolean;
   className?: string;
   showCaption?: boolean;
+  /** Fades the left and right edges instead of framing the photo. */
+  fade?: boolean;
 }
 
 /**
- * Renders a real photograph when `photo.src` is set, and a reserved area with
- * the same proportions while the image is still pending.
+ * Renders an optimized photograph. Slots without a source render nothing, so a
+ * pending photo never shows an empty frame on the live site.
  */
 export default function SitePhoto({
   photo,
@@ -28,32 +37,34 @@ export default function SitePhoto({
   priority = false,
   className = "",
   showCaption = true,
+  fade = false,
 }: SitePhotoProps) {
+  if (!photo.src) return null;
+
+  const frameClasses = fade
+    ? fadeMask
+    : "rounded-card border border-border bg-surface shadow-sm";
+
   return (
     <figure className={className}>
       <div
-        className={`relative ${aspectClasses[aspect]} w-full overflow-hidden rounded-card border border-border bg-surface shadow-sm`}
+        className={`relative ${aspectClasses[aspect]} w-full overflow-hidden ${frameClasses}`}
       >
-        {photo.src ? (
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            sizes={sizes}
-            priority={priority}
-            className="object-cover"
-          />
-        ) : (
-          <span
-            aria-hidden="true"
-            className="flex h-full w-full items-center justify-center font-serif text-4xl text-accent"
-          >
-            D
-          </span>
-        )}
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover"
+        />
       </div>
       {showCaption ? (
-        <figcaption className="mt-2 text-xs uppercase tracking-widest text-muted">
+        <figcaption
+          className={`mt-2 text-xs uppercase tracking-widest text-muted ${
+            fade ? "text-center" : ""
+          }`}
+        >
           {photo.caption}
         </figcaption>
       ) : null}

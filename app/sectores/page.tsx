@@ -7,7 +7,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import SitePhoto from "@/components/ui/SitePhoto";
 import { webPageJsonLd } from "@/lib/structuredData";
 import { sectors, sectorsPageContent } from "@/content/sectors";
-import { sectorPhotos } from "@/content/photos";
+import { sitePhotos } from "@/content/photos";
 
 const pageDescription =
   "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias, productoras y administraciones públicas: cómo adapta Danahe sus equipos y operaciones a cada sector.";
@@ -48,6 +48,17 @@ export default function SectorsPage() {
         </Container>
       </section>
 
+      <section className="pt-10 sm:pt-12">
+        <Container>
+          <SitePhoto
+            photo={sitePhotos.sectorsBand}
+            aspect="3/1"
+            sizes="(max-width: 1024px) 100vw, 1100px"
+            fade
+          />
+        </Container>
+      </section>
+
       <section className="py-6 sm:py-8">
         <Container>
           <h2 className="sr-only">Sectores en los que trabajamos</h2>
@@ -66,11 +77,7 @@ export default function SectorsPage() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div
-                  className={`mt-3 md:mt-0 ${
-                    sectorPhotos[sector.id] ? "md:col-span-7" : "md:col-span-10"
-                  }`}
-                >
+                <div className="mt-3 md:col-span-10 md:mt-0">
                   <h3 className="font-serif text-2xl">{sector.title}</h3>
                   <p className="mt-3 font-serif text-lg italic leading-relaxed text-foreground">
                     {sector.scene}
@@ -89,15 +96,6 @@ export default function SectorsPage() {
                     ))}
                   </ul>
                 </div>
-                {sectorPhotos[sector.id] ? (
-                  <SitePhoto
-                    photo={sectorPhotos[sector.id]}
-                    aspect="4/5"
-                    sizes="(max-width: 768px) 100vw, 300px"
-                    showCaption={false}
-                    className="mt-6 w-full max-w-xs md:col-span-3 md:mt-0"
-                  />
-                ) : null}
               </li>
             ))}
           </ol>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -6,6 +7,8 @@ import CallToAction from "@/components/sections/CallToAction";
 import SolutionAccordion from "@/components/sections/SolutionAccordion";
 import SolutionExplorer from "@/components/sections/SolutionExplorer";
 import JsonLd from "@/components/seo/JsonLd";
+import SitePhoto from "@/components/ui/SitePhoto";
+import { sitePhotos } from "@/content/photos";
 import { servicesJsonLd, webPageJsonLd } from "@/lib/structuredData";
 import { solutionGroups, solutionsPageContent } from "@/content/solutions";
 
@@ -50,22 +53,38 @@ export default function SolutionsPage() {
       </section>
 
       {solutionGroups.map((group, index) => (
-        <section
-          key={group.id}
-          id={group.id}
-          className={
-            index % 2 === 1
-              ? "scroll-mt-24 border-y border-border bg-surface py-12 sm:py-16"
-              : "scroll-mt-24 py-12 sm:py-16"
-          }
-        >
-          <Container>
-            <SectionHeading title={group.title} description={group.description} />
-            <SolutionExplorer groupId={group.id} items={group.items}>
-              <SolutionAccordion items={group.items} className="mt-6" />
-            </SolutionExplorer>
-          </Container>
-        </section>
+        <Fragment key={group.id}>
+          {index === 1 ? (
+            <section className="py-10 sm:py-12">
+              <Container>
+                <SitePhoto
+                  photo={sitePhotos.solutionsBand}
+                  aspect="3/1"
+                  sizes="(max-width: 1024px) 100vw, 1100px"
+                  fade
+                />
+              </Container>
+            </section>
+          ) : null}
+          <section
+            id={group.id}
+            className={
+              index % 2 === 1
+                ? "scroll-mt-24 border-y border-border bg-surface py-12 sm:py-16"
+                : "scroll-mt-24 py-12 sm:py-16"
+            }
+          >
+            <Container>
+              <SectionHeading
+                title={group.title}
+                description={group.description}
+              />
+              <SolutionExplorer groupId={group.id} items={group.items}>
+                <SolutionAccordion items={group.items} className="mt-6" />
+              </SolutionExplorer>
+            </Container>
+          </section>
+        </Fragment>
       ))}
 
       <section className="py-12 sm:py-16">
