@@ -1,17 +1,19 @@
 import Container from "@/components/ui/Container";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
+import SitePhoto from "@/components/ui/SitePhoto";
 import { photoStripContent } from "@/content/home";
+import { sitePhotos } from "@/content/photos";
 
 export default function PhotoStrip() {
   return (
     <section aria-label={photoStripContent.title} className="py-14 sm:py-16">
       <Container>
         <div className="grid gap-6 sm:grid-cols-3">
-          {photoStripContent.photos.map((photo) => (
-            <PhotoPlaceholder
-              key={photo.id}
+          {sitePhotos.strip.map((photo) => (
+            <SitePhoto
+              key={photo.caption}
+              photo={photo}
               aspect="4/3"
-              label={photo.caption}
+              sizes="(max-width: 640px) 100vw, 33vw"
             />
           ))}
         </div>

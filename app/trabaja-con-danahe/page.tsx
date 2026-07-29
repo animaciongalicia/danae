@@ -3,8 +3,9 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CandidateForm from "@/components/forms/CandidateForm";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
+import SitePhoto from "@/components/ui/SitePhoto";
 import JsonLd from "@/components/seo/JsonLd";
+import { sitePhotos } from "@/content/photos";
 import { webPageJsonLd } from "@/lib/structuredData";
 import {
   candidateExpectationsContent,
@@ -29,21 +30,12 @@ export default function WorkWithDanahePage() {
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
         <Container className="py-12 sm:py-16">
-          <div className="grid items-center gap-10 lg:grid-cols-5">
-            <div className="lg:col-span-3">
-              <SectionHeading
-                as="h1"
-                eyebrow={candidatesPageContent.eyebrow}
-                title={candidatesPageContent.title}
-                description={candidatesPageContent.description}
-              />
-            </div>
-            <PhotoPlaceholder
-              aspect="4/5"
-              label="Equipo Danahe en un servicio real"
-              className="mx-auto hidden w-full max-w-xs lg:col-span-2 lg:block"
-            />
-          </div>
+          <SectionHeading
+            as="h1"
+            eyebrow={candidatesPageContent.eyebrow}
+            title={candidatesPageContent.title}
+            description={candidatesPageContent.description}
+          />
         </Container>
       </section>
 
@@ -69,6 +61,13 @@ export default function WorkWithDanahePage() {
               </li>
             ))}
           </ul>
+
+          <SitePhoto
+            photo={sitePhotos.candidatesTeam}
+            aspect="3/2"
+            sizes="(max-width: 1024px) 100vw, 1100px"
+            className="mt-10"
+          />
 
           <h2 className="mt-14 font-serif text-2xl">
             {candidateValuesContent.title}

@@ -4,8 +4,10 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CallToAction from "@/components/sections/CallToAction";
 import JsonLd from "@/components/seo/JsonLd";
+import SitePhoto from "@/components/ui/SitePhoto";
 import { webPageJsonLd } from "@/lib/structuredData";
 import { sectors, sectorsPageContent } from "@/content/sectors";
+import { sectorPhotos } from "@/content/photos";
 
 const pageDescription =
   "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias, productoras y administraciones públicas: cómo adapta Danahe sus equipos y operaciones a cada sector.";
@@ -64,7 +66,11 @@ export default function SectorsPage() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div className="mt-3 md:col-span-10 md:mt-0">
+                <div
+                  className={`mt-3 md:mt-0 ${
+                    sectorPhotos[sector.id] ? "md:col-span-7" : "md:col-span-10"
+                  }`}
+                >
                   <h3 className="font-serif text-2xl">{sector.title}</h3>
                   <p className="mt-3 font-serif text-lg italic leading-relaxed text-foreground">
                     {sector.scene}
@@ -83,6 +89,15 @@ export default function SectorsPage() {
                     ))}
                   </ul>
                 </div>
+                {sectorPhotos[sector.id] ? (
+                  <SitePhoto
+                    photo={sectorPhotos[sector.id]}
+                    aspect="4/5"
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    showCaption={false}
+                    className="mt-6 w-full max-w-xs md:col-span-3 md:mt-0"
+                  />
+                ) : null}
               </li>
             ))}
           </ol>

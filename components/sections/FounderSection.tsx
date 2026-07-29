@@ -1,18 +1,20 @@
 import Container from "@/components/ui/Container";
+import SitePhoto from "@/components/ui/SitePhoto";
 import { founderContent } from "@/content/home";
+import { sitePhotos } from "@/content/photos";
 
 export default function FounderSection() {
   return (
     <section className="border-y border-border bg-accent-soft/60 py-14 sm:py-16">
       <Container>
         <div className="grid items-center gap-12 md:grid-cols-5">
-          {/* Reserved visual area until a real portrait is available. */}
-          <div
-            aria-hidden="true"
-            className="mx-auto flex aspect-4/5 w-full max-w-xs items-center justify-center rounded-card border border-border bg-surface md:col-span-2"
-          >
-            <span className="font-serif text-5xl text-accent">ED</span>
-          </div>
+          <SitePhoto
+            photo={sitePhotos.founder}
+            aspect="4/5"
+            sizes="(max-width: 768px) 100vw, 320px"
+            showCaption={false}
+            className="mx-auto w-full max-w-xs md:col-span-2"
+          />
           <div className="md:col-span-3">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent-strong">
               {founderContent.eyebrow}

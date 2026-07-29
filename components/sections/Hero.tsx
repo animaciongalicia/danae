@@ -1,7 +1,8 @@
 import Container from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
+import SitePhoto from "@/components/ui/SitePhoto";
 import { heroContent } from "@/content/home";
+import { sitePhotos } from "@/content/photos";
 
 export default function Hero() {
   return (
@@ -30,9 +31,11 @@ export default function Hero() {
               </ButtonLink>
             </div>
           </div>
-          <PhotoPlaceholder
+          <SitePhoto
+            photo={sitePhotos.homeHero}
             aspect="4/5"
-            label="Equipo Danahe en servicio"
+            sizes="(max-width: 1024px) 100vw, 400px"
+            priority
             className="mx-auto hidden w-full max-w-sm lg:col-span-2 lg:block"
           />
         </div>
