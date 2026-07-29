@@ -36,7 +36,7 @@ export default function LegalNoticePage() {
           <h2 className="font-serif text-xl">2. Objeto del sitio web</h2>
           <p className="mt-3 leading-relaxed text-muted">
             Este sitio web tiene por objeto dar a conocer los servicios de
-            Danahe, agencia de soluciones de talento y operaciones, y facilitar
+            Danahe Talent, agencia de soluciones de talento y operaciones, y facilitar
             el contacto de empresas interesadas y de personas candidatas.
           </p>
         </section>

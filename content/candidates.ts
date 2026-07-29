@@ -130,5 +130,5 @@ export const candidateFormContent = {
   description:
     "Cuéntanos tu experiencia, los perfiles que te interesan y tu disponibilidad. Leemos todas las candidaturas y te contactaremos cuando encaje con algún servicio.",
   privacyNote:
-    "Tus datos se usan únicamente para valorar tu candidatura e incluirte en procesos de selección de Danahe. Puedes pedir su eliminación en cualquier momento.",
+    "Tus datos se usan únicamente para valorar tu candidatura e incluirte en procesos de selección de Danahe Talent. Puedes pedir su eliminación en cualquier momento.",
 };

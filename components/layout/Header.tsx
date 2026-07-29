@@ -1,18 +1,15 @@
 import Link from "next/link";
 import { ctaNavigation, mainNavigation } from "@/config/navigation";
-import { siteConfig } from "@/config/site";
 import MobileNavigation from "@/components/layout/MobileNavigation";
+import Wordmark from "@/components/ui/Wordmark";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-4 lg:px-8">
-        <Link
-          href="/"
-          className="font-serif text-2xl tracking-wide text-foreground"
-        >
-          Danahe
-          <span className="sr-only"> — {siteConfig.name}, inicio</span>
+        <Link href="/" className="text-foreground">
+          <Wordmark />
+          <span className="sr-only">, inicio</span>
         </Link>
 
         <nav aria-label="Navegación principal" className="hidden md:block">

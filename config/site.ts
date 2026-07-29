@@ -2,7 +2,7 @@
 // Missing values stay empty on purpose: do not invent legal or contact data.
 export const siteConfig = {
   name: "Danahe Talent",
-  legalName: "Danahe",
+  legalName: "Danahe Talent",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
   email: "",
   candidateEmail: "",
@@ -16,4 +16,4 @@ export const siteConfig = {
 };
 
 export const siteDescription =
-  "Danahe diseña soluciones de talento y operaciones: seleccionamos a las personas adecuadas, construimos el equipo y organizamos la operación para que cada servicio funcione mejor.";
+  "Danahe Talent diseña soluciones de talento y operaciones: seleccionamos a las personas adecuadas, construimos el equipo y organizamos la operación para que cada servicio funcione mejor.";

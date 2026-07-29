@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         </h1>
         <p className="mt-5 leading-relaxed text-muted">
           Esta política describe cómo tratamos los datos personales de las
-          personas que se ponen en contacto con Danahe a través de este sitio
+          personas que se ponen en contacto con Danahe Talent a través de este sitio
           web, conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica
           3/2018 (LOPDGDD). Si nos escribes como candidato o candidata,
           consulta también la política de privacidad para candidatos.

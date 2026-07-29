@@ -20,7 +20,7 @@ export function GET(): Response {
 
 > ${siteDescription}
 
-Danahe es una agencia de soluciones de talento y operaciones. No es una empresa
+Danahe Talent es una agencia de soluciones de talento y operaciones. No es una empresa
 de trabajo temporal: analiza la necesidad de cada servicio, define las
 funciones, selecciona a los profesionales, construye el equipo, lo forma
 cuando hace falta, lo coordina con responsables al frente y supervisa la
