@@ -16,6 +16,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "seleccion-de-perfiles",
       title: "Selección de perfiles",
+      summary:
+        "Personas adecuadas para cada puesto, seleccionadas con criterio.",
       problem:
         "Encontrar personas fiables para cada función consume tiempo, y un error de selección se paga durante el servicio, delante de tus clientes.",
       action:
@@ -31,6 +33,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "mandos-intermedios",
       title: "Mandos intermedios",
+      summary:
+        "Jefes de equipo y responsables que dirigen sobre el terreno.",
       problem:
         "Sin responsables intermedios, cada incidencia acaba en tu mesa y el equipo trabaja sin una referencia clara durante el servicio.",
       action:
@@ -46,6 +50,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "administracion-y-secretariado",
       title: "Administración y secretariado",
+      summary:
+        "Refuerzo administrativo puntual o estable, adaptado a tu empresa.",
       problem:
         "Los picos de trabajo administrativo desbordan a los equipos internos y retrasan al resto de la organización.",
       action:
@@ -61,6 +67,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "recepcion",
       title: "Recepción",
+      summary:
+        "La primera impresión de tu empresa, resuelta con protocolo.",
       problem:
         "La recepción es la primera impresión de tu empresa, y una recepción improvisada transmite justo lo contrario de lo que quieres proyectar.",
       action:
@@ -76,6 +84,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "atencion-al-cliente",
       title: "Atención al cliente",
+      summary:
+        "Atención homogénea y cuidada en cada contacto.",
       problem:
         "Una atención irregular genera quejas, devoluciones y clientes que no vuelven, aunque el producto o el servicio sean buenos.",
       action:
@@ -91,6 +101,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "personal-comercial",
       title: "Personal comercial",
+      summary:
+        "Refuerzos comerciales que conocen tu producto y tu discurso.",
       problem:
         "Un refuerzo comercial improvisado no conoce el producto, no transmite la marca y desaprovecha cada contacto con el cliente.",
       action:
@@ -106,6 +118,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "refuerzos",
       title: "Refuerzos",
+      summary:
+        "Capacidad de respuesta ante picos y ausencias, sin improvisar.",
       problem:
         "Los picos de actividad llegan con poco margen, y cubrirlos con prisa se nota en la calidad del servicio.",
       action:
@@ -121,6 +135,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "formacion-e-incorporacion",
       title: "Formación e incorporación",
+      summary:
+        "Equipos preparados antes de empezar, no a mitad del servicio.",
       problem:
         "Un equipo sin preparación específica improvisa, y la improvisación se traslada directamente al cliente.",
       action:
@@ -136,6 +152,8 @@ export const talentSolutionsGroup: SolutionGroup = {
     {
       id: "bolsas-de-talento",
       title: "Creación de bolsas de talento",
+      summary:
+        "Tu bolsa de profesionales evaluados, lista para activarse.",
       problem:
         "Cada vez que necesitas gente vuelves a empezar de cero: anuncios, llamadas y decisiones con prisa.",
       action:
@@ -160,6 +178,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "gestion-integral-de-barras",
       title: "Gestión integral de barras",
+      summary:
+        "El servicio de barra completo: equipo, turnos y supervisión.",
       problem:
         "Una barra mal dimensionada genera colas, mermas y una mala experiencia que el público asocia al evento, no a la barra.",
       action:
@@ -175,6 +195,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "festivales-y-conciertos",
       title: "Festivales y conciertos",
+      summary:
+        "Operaciones de gran formato organizadas por zonas y turnos.",
       problem:
         "En una operación de gran volumen, los fallos de estructura se multiplican: zonas sin responsable, turnos confusos e incidencias que nadie resuelve.",
       action:
@@ -190,6 +212,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "congresos-y-ferias",
       title: "Congresos y ferias",
+      summary:
+        "Acreditación, sala y stand con protocolo e imagen cuidada.",
       problem:
         "Acreditaciones, salas y stands necesitan un equipo coordinado y con protocolo, no solo personas disponibles ese día.",
       action:
@@ -205,6 +229,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "hosteleria",
       title: "Hostelería",
+      summary:
+        "Sala y barra estables, también en los días fuertes.",
       problem:
         "La rotación y los picos de trabajo hacen difícil mantener un servicio de sala estable, sobre todo en los días fuertes.",
       action:
@@ -220,6 +246,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "promociones-y-activaciones",
       title: "Promociones y activaciones",
+      summary:
+        "Acciones de marca planificadas, ejecutadas y supervisadas.",
       problem:
         "Una promoción sin planificación ni seguimiento se convierte en gente repartiendo folletos sin criterio, y la marca lo paga.",
       action:
@@ -235,6 +263,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "atencion-a-asistentes",
       title: "Atención a asistentes",
+      summary:
+        "Información, accesos y flujos ordenados para tu público.",
       problem:
         "Cuando hay mucho público y nadie que lo oriente, aparecen colas, confusión y una sensación general de desorganización.",
       action:
@@ -250,6 +280,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "servicios-auxiliares",
       title: "Servicios auxiliares",
+      summary:
+        "Los servicios de apoyo, integrados y sin flancos descubiertos.",
       problem:
         "Los servicios de apoyo — guardarropa, logística ligera, apoyo de sala — suelen quedar sin estructura y fallan en el peor momento.",
       action:
@@ -265,6 +297,8 @@ export const operationalSolutionsGroup: SolutionGroup = {
     {
       id: "recintos-deportivos",
       title: "Recintos deportivos",
+      summary:
+        "La operación del recinto coordinada por zonas, jornada a jornada.",
       problem:
         "Un evento deportivo concentra a mucho público en poco tiempo, y cada jornada pone a prueba los accesos, la atención y los servicios del recinto.",
       action:

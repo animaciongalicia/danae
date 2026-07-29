@@ -17,39 +17,49 @@ export const metadata: Metadata = {
   alternates: { canonical: "/soluciones" },
 };
 
-function SolutionBlockCard({ block }: { block: SolutionBlock }) {
+function SolutionRow({ block }: { block: SolutionBlock }) {
   return (
-    <article className="flex h-full flex-col rounded-card border border-border bg-white/60 p-8 shadow-sm">
-      <h3 className="font-serif text-xl">{block.title}</h3>
-      <dl className="mt-4 flex-1 space-y-4 text-sm leading-relaxed">
-        <div>
-          <dt className="font-medium uppercase tracking-widest text-accent-strong">
-            El problema
-          </dt>
-          <dd className="mt-1 text-muted">{block.problem}</dd>
-        </div>
-        <div>
-          <dt className="font-medium uppercase tracking-widest text-accent-strong">
-            Qué hace Danahe
-          </dt>
-          <dd className="mt-1 text-muted">{block.action}</dd>
-        </div>
-        <div>
-          <dt className="font-medium uppercase tracking-widest text-accent-strong">
-            El resultado que buscamos
-          </dt>
-          <dd className="mt-1 text-muted">{block.result}</dd>
-        </div>
-      </dl>
-      <p className="mt-6">
-        <Link
-          href="/contacto"
-          className="text-sm font-medium text-accent-strong underline-offset-4 hover:underline"
+    <details className="group py-6">
+      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-strong">
+        <span>
+          <span className="font-serif text-xl text-foreground transition-colors group-hover:text-accent-strong">
+            {block.title}
+          </span>
+          <span className="mt-1 block text-sm text-muted">{block.summary}</span>
+        </span>
+        <span
+          aria-hidden="true"
+          className="shrink-0 font-serif text-2xl text-accent transition-transform duration-200 group-open:rotate-45"
         >
-          Cuéntanos tu caso
-        </Link>
-      </p>
-    </article>
+          +
+        </span>
+      </summary>
+      <div className="mt-4 max-w-3xl space-y-4 leading-relaxed text-muted">
+        <p>{block.problem}</p>
+        <p>{block.action}</p>
+        <ul className="space-y-1 text-sm">
+          {block.includes.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span aria-hidden="true" className="text-accent">
+                —
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="font-serif text-lg italic text-foreground">
+          {block.result}
+        </p>
+        <p>
+          <Link
+            href="/contacto"
+            className="text-sm font-medium not-italic text-accent-strong underline-offset-4 hover:underline"
+          >
+            Cuéntanos tu caso
+          </Link>
+        </p>
+      </div>
+    </details>
   );
 }
 
@@ -64,23 +74,41 @@ export default function SolutionsPage() {
             title={solutionsPageContent.title}
             description={solutionsPageContent.description}
           />
+          <nav aria-label="Grupos de soluciones" className="mt-8">
+            <ul className="flex flex-wrap gap-3">
+              {solutionGroups.map((group) => (
+                <li key={group.id}>
+                  <a
+                    href={`#${group.id}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent-strong"
+                  >
+                    {group.title}
+                    <span className="text-xs text-muted">
+                      {group.items.length}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </Container>
       </section>
 
       {solutionGroups.map((group, index) => (
         <section
           key={group.id}
+          id={group.id}
           className={
             index % 2 === 1
-              ? "border-y border-border bg-surface py-12 sm:py-16"
-              : "py-12 sm:py-16"
+              ? "scroll-mt-24 border-y border-border bg-surface py-12 sm:py-16"
+              : "scroll-mt-24 py-12 sm:py-16"
           }
         >
           <Container>
             <SectionHeading title={group.title} description={group.description} />
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className="mt-6 divide-y divide-border">
               {group.items.map((block) => (
-                <SolutionBlockCard key={block.id} block={block} />
+                <SolutionRow key={block.id} block={block} />
               ))}
             </div>
           </Container>

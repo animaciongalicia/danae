@@ -11,6 +11,8 @@ export interface Service {
 export interface SolutionBlock {
   id: string;
   title: string;
+  /** One-line teaser shown while the accordion row is collapsed. */
+  summary: string;
   problem: string;
   action: string;
   includes: string[];
@@ -27,6 +29,8 @@ export interface SolutionGroup {
 export interface Sector {
   id: string;
   title: string;
+  /** Scene-setting opening line that puts the reader in the situation. */
+  scene: string;
   description: string;
   highlights: string[];
 }
