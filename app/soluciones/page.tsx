@@ -61,7 +61,7 @@ export default function SolutionsPage() {
                   photo={sitePhotos.solutionsBand}
                   aspect="3/1"
                   sizes="(max-width: 1024px) 100vw, 1100px"
-                  fade
+                  frame="fade"
                 />
               </Container>
             </section>

@@ -39,6 +39,7 @@ export default function Hero() {
             photo={sitePhotos.homeHero}
             aspect="4/5"
             sizes="(max-width: 1024px) 100vw, 400px"
+            frame="bare"
             priority
             showCaption={false}
             className="mx-auto w-full max-w-sm lg:col-span-2"

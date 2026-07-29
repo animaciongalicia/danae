@@ -10,20 +10,24 @@ const aspectClasses = {
   "21/9": "aspect-[21/9]",
 } as const;
 
-// Softens both sides into the page background; only for centred compositions.
-const fadeMask =
-  "[mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]";
+const frameClasses = {
+  /** Framed photograph, matching the cards used across the site. */
+  card: "rounded-card border border-border bg-surface shadow-sm",
+  /** No frame: the photograph sits directly on the page background. */
+  bare: "rounded-card",
+  /** Sides melt into the background; only for wide, centred compositions. */
+  fade: "[mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]",
+} as const;
 
 interface SitePhotoProps {
   photo: SitePhotoData;
   aspect: keyof typeof aspectClasses;
   /** Passed to next/image so the browser downloads the right size. */
   sizes: string;
+  frame?: keyof typeof frameClasses;
   priority?: boolean;
   className?: string;
   showCaption?: boolean;
-  /** Fades the left and right edges instead of framing the photo. */
-  fade?: boolean;
 }
 
 /**
@@ -34,21 +38,17 @@ export default function SitePhoto({
   photo,
   aspect,
   sizes,
+  frame = "card",
   priority = false,
   className = "",
   showCaption = true,
-  fade = false,
 }: SitePhotoProps) {
   if (!photo.src) return null;
-
-  const frameClasses = fade
-    ? fadeMask
-    : "rounded-card border border-border bg-surface shadow-sm";
 
   return (
     <figure className={className}>
       <div
-        className={`relative ${aspectClasses[aspect]} w-full overflow-hidden ${frameClasses}`}
+        className={`relative ${aspectClasses[aspect]} w-full overflow-hidden ${frameClasses[frame]}`}
       >
         <Image
           src={photo.src}
@@ -62,7 +62,7 @@ export default function SitePhoto({
       {showCaption ? (
         <figcaption
           className={`mt-2 text-xs uppercase tracking-widest text-muted ${
-            fade ? "text-center" : ""
+            frame === "fade" ? "text-center" : ""
           }`}
         >
           {photo.caption}

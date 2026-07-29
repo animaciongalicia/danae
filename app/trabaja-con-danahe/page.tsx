@@ -66,7 +66,7 @@ export default function WorkWithDanahePage() {
             photo={sitePhotos.candidatesBand}
             aspect="21/9"
             sizes="(max-width: 1024px) 100vw, 900px"
-            fade
+            frame="fade"
             className="mx-auto mt-10 max-w-3xl"
           />
 

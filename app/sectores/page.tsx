@@ -54,7 +54,7 @@ export default function SectorsPage() {
             photo={sitePhotos.sectorsBand}
             aspect="3/1"
             sizes="(max-width: 1024px) 100vw, 1100px"
-            fade
+            frame="fade"
           />
         </Container>
       </section>
