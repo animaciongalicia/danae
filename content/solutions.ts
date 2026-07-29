@@ -4,7 +4,7 @@ export const solutionsPageContent = {
   eyebrow: "Soluciones",
   title: "Soluciones de talento y operaciones",
   description:
-    "DANAE no se limita a buscar personal. Analizamos cada necesidad, definimos las funciones, seleccionamos a las personas y organizamos la operación completa. Trabajamos en dos planos que se complementan: el talento y la operación. Puedes contratarlos juntos o por separado.",
+    "DANAHE no se limita a buscar personal. Analizamos cada necesidad, definimos las funciones, seleccionamos a las personas y organizamos la operación completa. Trabajamos en dos planos que se complementan: el talento y la operación. Puedes contratarlos juntos o por separado.",
 };
 
 export const talentSolutionsGroup: SolutionGroup = {
@@ -155,7 +155,7 @@ export const operationalSolutionsGroup: SolutionGroup = {
   id: "soluciones-operativas",
   title: "Soluciones operativas",
   description:
-    "Operaciones completas diseñadas, coordinadas y supervisadas por DANAE. Nos encargamos del servicio de principio a fin, con responsables en cada equipo.",
+    "Operaciones completas diseñadas, coordinadas y supervisadas por DANAHE. Nos encargamos del servicio de principio a fin, con responsables en cada equipo.",
   items: [
     {
       id: "gestion-integral-de-barras",

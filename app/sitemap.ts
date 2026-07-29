@@ -6,7 +6,7 @@ const routes = [
   "/soluciones",
   "/sectores",
   "/contacto",
-  "/trabaja-con-danae",
+  "/trabaja-con-danahe",
   "/aviso-legal",
   "/privacidad",
   "/privacidad-candidatos",

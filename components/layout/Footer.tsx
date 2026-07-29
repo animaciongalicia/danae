@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="max-w-sm">
-            <p className="font-serif text-2xl tracking-wide">DANAE</p>
+            <p className="font-serif text-2xl tracking-wide">DANAHE</p>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               {siteDescription}
             </p>

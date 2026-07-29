@@ -2,9 +2,9 @@
 
 ## Project overview
 
-DANAE is a corporate website for a talent management and operational staffing agency.
+DANAHE is a corporate website for a talent management and operational staffing agency.
 
-DANAE helps companies design, select, organize, coordinate and supervise teams for:
+DANAHE helps companies design, select, organize, coordinate and supervise teams for:
 
 * Events.
 * Festivals.
@@ -17,11 +17,11 @@ DANAE helps companies design, select, organize, coordinate and supervise teams f
 * Corporate environments.
 * Administrative and customer-facing roles.
 
-DANAE must not be presented as a temporary employment agency or as a company that merely supplies workers.
+DANAHE must not be presented as a temporary employment agency or as a company that merely supplies workers.
 
 The core positioning is:
 
-DANAE designs talent and operational solutions that help services work better.
+DANAHE designs talent and operational solutions that help services work better.
 
 The company works with people, but its commercial value is based on:
 
@@ -41,9 +41,9 @@ The project name used in code is `danae-web`.
 
 ## Main business message
 
-DANAE does not simply search for staff.
+DANAHE does not simply search for staff.
 
-DANAE:
+DANAHE:
 
 * Understands the client's operational need.
 * Defines the necessary roles.
@@ -124,7 +124,7 @@ danae-web/
 │   │   └── page.tsx
 │   ├── soluciones/
 │   │   └── page.tsx
-│   ├── trabaja-con-danae/
+│   ├── trabaja-con-danahe/
 │   │   └── page.tsx
 │   ├── aviso-legal/
 │   │   └── page.tsx
@@ -198,7 +198,7 @@ Main navigation:
 
 Secondary navigation and CTA:
 
-* `/trabaja-con-danae` — Trabaja con Danae.
+* `/trabaja-con-danahe` — Trabaja con Danahe.
 
 Legal routes:
 
@@ -335,7 +335,7 @@ Examples:
 * `SolutionsSection.tsx`
 * `ContactForm.tsx`
 * `getContactEmail`
-* `/trabaja-con-danae`
+* `/trabaja-con-danahe`
 
 React conventions:
 
@@ -369,7 +369,7 @@ Create a configuration file such as:
 
 ```ts
 export const siteConfig = {
-  name: "DANAE Talent",
+  name: "DANAHE Talent",
   legalName: "",
   siteUrl: "",
   email: "",

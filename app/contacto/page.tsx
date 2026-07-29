@@ -15,7 +15,7 @@ import {
 } from "@/content/contact";
 
 const pageDescription =
-  "Solicita una propuesta a DANAE: cuéntanos tu servicio, fechas y volumen, y te respondemos con una solución de talento y operaciones a medida. También por teléfono o WhatsApp.";
+  "Solicita una propuesta a DANAHE: cuéntanos tu servicio, fechas y volumen, y te respondemos con una solución de talento y operaciones a medida. También por teléfono o WhatsApp.";
 
 export const metadata: Metadata = {
   title: "Contacto",

@@ -1,8 +1,8 @@
 // Centralized site, contact and business information.
 // Missing values stay empty on purpose: do not invent legal or contact data.
 export const siteConfig = {
-  name: "DANAE Talent",
-  legalName: "DANAE",
+  name: "DANAHE Talent",
+  legalName: "DANAHE",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
   email: "",
   candidateEmail: "",
@@ -16,4 +16,4 @@ export const siteConfig = {
 };
 
 export const siteDescription =
-  "DANAE diseña soluciones de talento y operaciones: seleccionamos a las personas adecuadas, construimos el equipo y organizamos la operación para que cada servicio funcione mejor.";
+  "DANAHE diseña soluciones de talento y operaciones: seleccionamos a las personas adecuadas, construimos el equipo y organizamos la operación para que cada servicio funcione mejor.";

@@ -5,12 +5,12 @@ export const faqContent = {
   title: "Lo que nos suelen preguntar",
   items: [
     {
-      question: "¿DANAE es una ETT?",
+      question: "¿DANAHE es una ETT?",
       answer:
         "No. No cedemos trabajadores ni nos limitamos a cubrir puestos. Diseñamos soluciones de talento y operaciones: analizamos la necesidad, construimos el equipo, lo coordinamos y supervisamos el servicio.",
     },
     {
-      question: "¿DANAE aporta personal o gestiona el servicio completo?",
+      question: "¿DANAHE aporta personal o gestiona el servicio completo?",
       answer:
         "Las dos cosas, según lo que necesites. Podemos seleccionar y preparar perfiles concretos para tu equipo, o diseñar y operar el servicio completo con nuestros propios responsables y supervisión.",
     },
@@ -37,7 +37,7 @@ export const faqContent = {
     {
       question: "¿Cómo puedo enviar mi currículum?",
       answer:
-        "Desde la página Trabaja con Danae, con el formulario de candidatura. Cuéntanos tu experiencia, los perfiles que te interesan y tu disponibilidad.",
+        "Desde la página Trabaja con Danahe, con el formulario de candidatura. Cuéntanos tu experiencia, los perfiles que te interesan y tu disponibilidad.",
     },
   ] satisfies FaqItem[],
 };

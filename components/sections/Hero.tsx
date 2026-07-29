@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
           <PhotoPlaceholder
             aspect="4/5"
-            label="Equipo DANAE en servicio"
+            label="Equipo DANAHE en servicio"
             className="mx-auto hidden w-full max-w-sm lg:col-span-2 lg:block"
           />
         </div>

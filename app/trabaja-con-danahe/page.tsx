@@ -16,15 +16,15 @@ import {
 } from "@/content/candidates";
 
 const pageDescription =
-  "Envía tu candidatura a DANAE: personal de barra y sala, azafatas y azafatos, promotores, administrativos, recepcionistas y mandos intermedios para servicios bien organizados.";
+  "Envía tu candidatura a DANAHE: personal de barra y sala, azafatas y azafatos, promotores, administrativos, recepcionistas y mandos intermedios para servicios bien organizados.";
 
 export const metadata: Metadata = {
-  title: "Trabaja con Danae",
+  title: "Trabaja con Danahe",
   description: pageDescription,
-  alternates: { canonical: "/trabaja-con-danae" },
+  alternates: { canonical: "/trabaja-con-danahe" },
 };
 
-export default function WorkWithDanaePage() {
+export default function WorkWithDanahePage() {
   return (
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
@@ -58,7 +58,7 @@ export default function WorkWithDanaePage() {
               </ul>
               <PhotoPlaceholder
                 aspect="3/2"
-                label="Equipo DANAE en un servicio real"
+                label="Equipo DANAHE en un servicio real"
                 className="mt-8"
               />
             </div>
@@ -153,10 +153,10 @@ export default function WorkWithDanaePage() {
       </section>
       <JsonLd
         data={webPageJsonLd({
-          title: "Trabaja con Danae",
+          title: "Trabaja con Danahe",
           description: pageDescription,
-          path: "/trabaja-con-danae",
-          breadcrumbName: "Trabaja con Danae",
+          path: "/trabaja-con-danahe",
+          breadcrumbName: "Trabaja con Danahe",
         })}
       />
     </main>

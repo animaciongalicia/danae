@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Política de privacidad",
   description:
-    "Política de privacidad del sitio web de DANAE: cómo tratamos los datos personales de las personas que nos contactan.",
+    "Política de privacidad del sitio web de DANAHE: cómo tratamos los datos personales de las personas que nos contactan.",
   alternates: { canonical: "/privacidad" },
 };
 
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         </h1>
         <p className="mt-5 leading-relaxed text-muted">
           Esta política describe cómo tratamos los datos personales de las
-          personas que se ponen en contacto con DANAE a través de este sitio
+          personas que se ponen en contacto con DANAHE a través de este sitio
           web, conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica
           3/2018 (LOPDGDD). Si nos escribes como candidato o candidata,
           consulta también la política de privacidad para candidatos.

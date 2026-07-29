@@ -15,10 +15,10 @@ export const inquiryTypesContent = [
   },
   {
     id: "candidato",
-    title: "Quiero trabajar con Danae",
+    title: "Quiero trabajar con Danahe",
     description:
-      "Quieres formar parte de nuestros equipos en eventos, hostelería o entornos corporativos. Envíanos tu candidatura desde la página Trabaja con Danae.",
-    cta: { label: "Enviar candidatura", href: "/trabaja-con-danae" },
+      "Quieres formar parte de nuestros equipos en eventos, hostelería o entornos corporativos. Envíanos tu candidatura desde la página Trabaja con Danahe.",
+    cta: { label: "Enviar candidatura", href: "/trabaja-con-danahe" },
   },
 ];
 
@@ -28,7 +28,7 @@ export const contactChannelsContent = {
   phoneLabel: "Llámanos y cuéntanoslo de viva voz",
   whatsappLabel: "Escríbenos por WhatsApp",
   whatsappMessage:
-    "Hola, contacto desde la web de DANAE. Me gustaría solicitar información sobre una solución de talento u operaciones.",
+    "Hola, contacto desde la web de DANAHE. Me gustaría solicitar información sobre una solución de talento u operaciones.",
   pendingNote:
     "Los botones de llamada y WhatsApp se activarán al configurar el teléfono en la configuración del sitio.",
 };

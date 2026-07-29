@@ -8,13 +8,13 @@ export const mainNavigation: NavigationItem[] = [
 ];
 
 export const ctaNavigation: NavigationItem = {
-  label: "Trabaja con Danae",
-  href: "/trabaja-con-danae",
+  label: "Trabaja con Danahe",
+  href: "/trabaja-con-danahe",
 };
 
 // Footer columns
 export const talentNavigation: NavigationItem[] = [
-  { label: "Trabaja con Danae", href: "/trabaja-con-danae" },
+  { label: "Trabaja con Danahe", href: "/trabaja-con-danahe" },
   { label: "Privacidad de candidatos", href: "/privacidad-candidatos" },
 ];
 

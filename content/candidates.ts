@@ -1,12 +1,12 @@
 export const candidatesPageContent = {
-  eyebrow: "Trabaja con Danae",
+  eyebrow: "Trabaja con Danahe",
   title: "Profesionales que hacen que el servicio funcione",
   description:
-    "En DANAE no buscamos gente para llenar huecos: construimos equipos con funciones claras, responsables al frente y servicios bien organizados. Si trabajas bien y te gusta que se note, queremos conocerte.",
+    "En DANAHE no buscamos gente para llenar huecos: construimos equipos con funciones claras, responsables al frente y servicios bien organizados. Si trabajas bien y te gusta que se note, queremos conocerte.",
 };
 
 export const candidateProfilesContent = {
-  title: "Qué perfiles busca Danae",
+  title: "Qué perfiles busca Danahe",
   description:
     "Trabajamos con perfiles muy distintos, para eventos, hostelería y entornos corporativos:",
   profiles: [
@@ -79,7 +79,7 @@ export const candidateExpectationsContent = {
 export const candidateResponsibilityContent = {
   title: "Tipos de responsabilidad",
   description:
-    "En DANAE se puede crecer: los equipos tienen estructura y cada nivel asume más responsabilidad.",
+    "En DANAHE se puede crecer: los equipos tienen estructura y cada nivel asume más responsabilidad.",
   levels: [
     {
       title: "Personal de servicio",
@@ -128,5 +128,5 @@ export const candidateFormContent = {
   description:
     "Cuéntanos tu experiencia, los perfiles que te interesan y tu disponibilidad. Leemos todas las candidaturas y te contactaremos cuando encaje con algún servicio.",
   privacyNote:
-    "Tus datos se usan únicamente para valorar tu candidatura e incluirte en procesos de selección de DANAE. Puedes pedir su eliminación en cualquier momento.",
+    "Tus datos se usan únicamente para valorar tu candidatura e incluirte en procesos de selección de DANAHE. Puedes pedir su eliminación en cualquier momento.",
 };
