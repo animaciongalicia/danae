@@ -29,55 +29,60 @@ export default function WorkWithDanahePage() {
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
         <Container className="py-12 sm:py-16">
-          <SectionHeading
-            as="h1"
-            eyebrow={candidatesPageContent.eyebrow}
-            title={candidatesPageContent.title}
-            description={candidatesPageContent.description}
-          />
+          <div className="grid items-center gap-10 lg:grid-cols-5">
+            <div className="lg:col-span-3">
+              <SectionHeading
+                as="h1"
+                eyebrow={candidatesPageContent.eyebrow}
+                title={candidatesPageContent.title}
+                description={candidatesPageContent.description}
+              />
+            </div>
+            <PhotoPlaceholder
+              aspect="4/5"
+              label="Equipo Danahe en un servicio real"
+              className="mx-auto hidden w-full max-w-xs lg:col-span-2 lg:block"
+            />
+          </div>
         </Container>
       </section>
 
       <section className="py-12 sm:py-16">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="font-serif text-2xl">
-                {candidateProfilesContent.title}
-              </h2>
-              <p className="mt-3 text-muted">
-                {candidateProfilesContent.description}
-              </p>
-              <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-                {candidateProfilesContent.profiles.map((profile) => (
-                  <li key={profile} className="flex gap-3 text-muted">
-                    <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                    <span>{profile}</span>
-                  </li>
-                ))}
-              </ul>
-              <PhotoPlaceholder
-                aspect="3/2"
-                label="Equipo Danahe en un servicio real"
-                className="mt-8"
-              />
-            </div>
-            <div>
-              <h2 className="font-serif text-2xl">
-                {candidateValuesContent.title}
-              </h2>
-              <dl className="mt-6 space-y-5">
-                {candidateValuesContent.values.map((value) => (
-                  <div key={value.title}>
-                    <dt className="font-medium">{value.title}</dt>
-                    <dd className="mt-1 text-sm leading-relaxed text-muted">
-                      {value.description}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
+          <h2 className="font-serif text-2xl">
+            {candidateProfilesContent.title}
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            {candidateProfilesContent.description}
+          </p>
+          <ul className="mt-7 flex flex-wrap gap-3">
+            {candidateProfilesContent.profiles.map((profile) => (
+              <li
+                key={profile}
+                className="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-border bg-white/60 px-4 py-2 text-sm text-foreground shadow-sm"
+              >
+                <span
+                  aria-hidden="true"
+                  className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                />
+                {profile}
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mt-14 font-serif text-2xl">
+            {candidateValuesContent.title}
+          </h2>
+          <dl className="mt-7 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+            {candidateValuesContent.values.map((value) => (
+              <div key={value.title} className="border-t border-border pt-4">
+                <dt className="font-serif text-lg">{value.title}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-muted">
+                  {value.description}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </Container>
       </section>
 

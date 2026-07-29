@@ -8,19 +8,21 @@ export const candidatesPageContent = {
 export const candidateProfilesContent = {
   title: "Qué perfiles busca Danahe",
   description:
-    "Trabajamos con perfiles muy distintos, para eventos, hostelería y entornos corporativos:",
+    "Trabajamos con perfiles muy distintos, para eventos, hostelería y entornos corporativos. Estos son los que más nos piden:",
+  // Short labels on purpose: each one has to fit on a single line.
   profiles: [
-    "Personal de barra.",
-    "Personal de sala.",
-    "Responsables y mandos intermedios.",
-    "Coordinadores.",
-    "Promotores.",
-    "Azafatas y azafatos.",
-    "Administrativos.",
-    "Recepcionistas.",
-    "Atención al cliente.",
-    "Comerciales.",
-    "Auxiliares.",
+    "Personal de barra",
+    "Personal de sala",
+    "Responsables",
+    "Mandos intermedios",
+    "Coordinadores",
+    "Promotores",
+    "Azafatas y azafatos",
+    "Administrativos",
+    "Recepcionistas",
+    "Atención al cliente",
+    "Comerciales",
+    "Auxiliares",
   ],
 };
 
