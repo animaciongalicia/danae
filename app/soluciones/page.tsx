@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CallToAction from "@/components/sections/CallToAction";
 import SolutionAccordion from "@/components/sections/SolutionAccordion";
+import SolutionExplorer from "@/components/sections/SolutionExplorer";
 import JsonLd from "@/components/seo/JsonLd";
 import { servicesJsonLd, webPageJsonLd } from "@/lib/structuredData";
 import { solutionGroups, solutionsPageContent } from "@/content/solutions";
@@ -60,7 +61,9 @@ export default function SolutionsPage() {
         >
           <Container>
             <SectionHeading title={group.title} description={group.description} />
-            <SolutionAccordion items={group.items} className="mt-6" />
+            <SolutionExplorer groupId={group.id} items={group.items}>
+              <SolutionAccordion items={group.items} className="mt-6" />
+            </SolutionExplorer>
           </Container>
         </section>
       ))}
