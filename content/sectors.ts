@@ -4,7 +4,7 @@ export const sectorsPageContent = {
   eyebrow: "Sectores",
   title: "Dónde trabajamos",
   description:
-    "Cada sector tiene sus propios ritmos, riesgos y públicos. El método de DANAHE es el mismo — entender, estructurar, coordinar y supervisar —, pero la solución se diseña a medida de cada operación.",
+    "Cada sector tiene sus propios ritmos, riesgos y públicos. El método de Danahe es el mismo — entender, estructurar, coordinar y supervisar —, pero la solución se diseña a medida de cada operación.",
 };
 
 export const sectors: Sector[] = [

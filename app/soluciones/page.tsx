@@ -9,7 +9,7 @@ import { solutionGroups, solutionsPageContent } from "@/content/solutions";
 import type { SolutionBlock } from "@/types";
 
 const pageDescription =
-  "Selección de perfiles, mandos intermedios, refuerzos y formación; barras, festivales, congresos, promociones y recintos deportivos. Así resuelve DANAHE cada servicio.";
+  "Selección de perfiles, mandos intermedios, refuerzos y formación; barras, festivales, congresos, promociones y recintos deportivos. Así resuelve Danahe cada servicio.";
 
 export const metadata: Metadata = {
   title: "Soluciones de talento y operaciones",

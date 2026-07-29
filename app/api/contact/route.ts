@@ -90,7 +90,7 @@ export async function POST(request: Request) {
 
   const result = await sendEmail({
     to,
-    subject: "Nueva solicitud comercial desde la web de DANAHE",
+    subject: "Nueva solicitud comercial desde la web de Danahe",
     text: buildEmailText(parsed.data),
     replyTo: parsed.data.email,
   });

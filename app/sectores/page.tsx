@@ -9,7 +9,7 @@ import { webPageJsonLd } from "@/lib/structuredData";
 import { sectors, sectorsPageContent } from "@/content/sectors";
 
 const pageDescription =
-  "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias y administraciones públicas: cómo adapta DANAHE sus equipos y operaciones a cada sector.";
+  "Festivales, congresos, empresas, hostelería, comercio, deporte, agencias y administraciones públicas: cómo adapta Danahe sus equipos y operaciones a cada sector.";
 
 export const metadata: Metadata = {
   title: "Sectores donde trabajamos",

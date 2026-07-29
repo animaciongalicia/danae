@@ -11,7 +11,7 @@ export default function Header() {
           href="/"
           className="font-serif text-2xl tracking-wide text-foreground"
         >
-          DANAHE
+          Danahe
           <span className="sr-only"> — {siteConfig.name}, inicio</span>
         </Link>
 

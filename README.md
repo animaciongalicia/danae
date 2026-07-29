@@ -1,6 +1,6 @@
-# DANAHE Talent — danae-web
+# Danahe Talent — danae-web
 
-Sitio web corporativo de DANAHE, agencia de soluciones de talento y operaciones para eventos, hostelería y entornos corporativos.
+Sitio web corporativo de Danahe, agencia de soluciones de talento y operaciones para eventos, hostelería y entornos corporativos.
 
 Stack: [Next.js](https://nextjs.org) (App Router) + TypeScript + Tailwind CSS + Zod, desplegado en Vercel. Envío de correo con [Resend](https://resend.com).
 
@@ -30,7 +30,7 @@ Documentadas en `.env.example`. Para desarrollo local, copia ese archivo a `.env
 | Variable | Uso |
 | --- | --- |
 | `RESEND_API_KEY` | Clave de API de Resend para el envío de correo. |
-| `EMAIL_FROM` | Remitente verificado en Resend (`DANAHE <hola@dominio.com>`). |
+| `EMAIL_FROM` | Remitente verificado en Resend (`Danahe <hola@dominio.com>`). |
 | `EMAIL_CONTACT` | Buzón que recibe las solicitudes comerciales. |
 | `EMAIL_CANDIDATES` | Buzón que recibe las candidaturas con CV adjunto. |
 | `NEXT_PUBLIC_SITE_URL` | URL pública del sitio (metadatos, robots, sitemap). |
@@ -41,15 +41,15 @@ Mientras las variables de Resend no estén configuradas, los formularios devuelv
 
 ## Formularios y envío de correo
 
-- **Solicitud comercial** (`/contacto` → `POST /api/contact`, JSON). Asunto: «Nueva solicitud comercial desde la web de DANAHE». Se envía a `EMAIL_CONTACT`.
-- **Candidatura** (`/trabaja-con-danahe` → `POST /api/candidates`, `multipart/form-data` con CV en PDF adjunto). Asunto: «Nueva candidatura recibida desde la web de DANAHE». Se envía a `EMAIL_CANDIDATES`.
+- **Solicitud comercial** (`/contacto` → `POST /api/contact`, JSON). Asunto: «Nueva solicitud comercial desde la web de Danahe». Se envía a `EMAIL_CONTACT`.
+- **Candidatura** (`/trabaja-con-danahe` → `POST /api/candidates`, `multipart/form-data` con CV en PDF adjunto). Asunto: «Nueva candidatura recibida desde la web de Danahe». Se envía a `EMAIL_CANDIDATES`.
 - Ambos envían un **correo de confirmación** al remitente y usan `reply_to` para poder responder directamente.
 
 ### Configuración de Resend
 
 1. Crea una cuenta en [resend.com](https://resend.com) y genera una API key (Settings → API Keys).
 2. **Verifica el dominio** de envío (Domains → Add Domain) añadiendo los registros DNS (SPF y DKIM) que indica Resend. Hasta verificar el dominio solo se puede enviar desde `onboarding@resend.dev` y únicamente al correo de la propia cuenta.
-3. Configura `EMAIL_FROM` con un remitente del dominio verificado, por ejemplo `DANAHE <hola@danaetalent.com>`.
+3. Configura `EMAIL_FROM` con un remitente del dominio verificado, por ejemplo `Danahe <hola@danaetalent.com>`.
 4. Define `EMAIL_CONTACT` y `EMAIL_CANDIDATES` (pueden ser el mismo buzón).
 
 ### Pruebas locales

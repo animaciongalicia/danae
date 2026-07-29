@@ -28,7 +28,7 @@ export const contactChannelsContent = {
   phoneLabel: "Llámanos y cuéntanoslo de viva voz",
   whatsappLabel: "Escríbenos por WhatsApp",
   whatsappMessage:
-    "Hola, contacto desde la web de DANAHE. Me gustaría solicitar información sobre una solución de talento u operaciones.",
+    "Hola, contacto desde la web de Danahe. Me gustaría solicitar información sobre una solución de talento u operaciones.",
   pendingNote:
     "Los botones de llamada y WhatsApp se activarán al configurar el teléfono en la configuración del sitio.",
 };

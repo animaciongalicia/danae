@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Privacidad para candidatos",
   description:
-    "Política de privacidad para candidatos de DANAHE: cómo tratamos los datos personales de quienes envían su candidatura.",
+    "Política de privacidad para candidatos de Danahe: cómo tratamos los datos personales de quienes envían su candidatura.",
   alternates: { canonical: "/privacidad-candidatos" },
 };
 
@@ -18,7 +18,7 @@ export default function CandidatePrivacyPage() {
         </h1>
         <p className="mt-5 leading-relaxed text-muted">
           Esta política describe cómo tratamos los datos personales de las
-          personas que envían su candidatura a DANAHE a través del formulario
+          personas que envían su candidatura a Danahe a través del formulario
           «Trabaja con Danahe», conforme al Reglamento (UE) 2016/679 (RGPD) y a
           la Ley Orgánica 3/2018 (LOPDGDD).
         </p>
@@ -40,7 +40,7 @@ export default function CandidatePrivacyPage() {
           <p className="mt-3 leading-relaxed text-muted">
             Los datos de tu candidatura se utilizan exclusivamente para
             valorar tu perfil e incorporarlo, en su caso, a los procesos de
-            selección de los servicios que gestiona DANAHE, y para contactarte
+            selección de los servicios que gestiona Danahe, y para contactarte
             en relación con dichos procesos.
           </p>
         </section>

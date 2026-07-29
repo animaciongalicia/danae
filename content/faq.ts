@@ -5,12 +5,12 @@ export const faqContent = {
   title: "Lo que nos suelen preguntar",
   items: [
     {
-      question: "¿DANAHE es una ETT?",
+      question: "¿Danahe es una ETT?",
       answer:
         "No. No cedemos trabajadores ni nos limitamos a cubrir puestos. Diseñamos soluciones de talento y operaciones: analizamos la necesidad, construimos el equipo, lo coordinamos y supervisamos el servicio.",
     },
     {
-      question: "¿DANAHE aporta personal o gestiona el servicio completo?",
+      question: "¿Danahe aporta personal o gestiona el servicio completo?",
       answer:
         "Las dos cosas, según lo que necesites. Podemos seleccionar y preparar perfiles concretos para tu equipo, o diseñar y operar el servicio completo con nuestros propios responsables y supervisión.",
     },

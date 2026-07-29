@@ -16,7 +16,7 @@ import {
 } from "@/content/candidates";
 
 const pageDescription =
-  "Envía tu candidatura a DANAHE: personal de barra y sala, azafatas y azafatos, promotores, administrativos, recepcionistas y mandos intermedios para servicios bien organizados.";
+  "Envía tu candidatura a Danahe: personal de barra y sala, azafatas y azafatos, promotores, administrativos, recepcionistas y mandos intermedios para servicios bien organizados.";
 
 export const metadata: Metadata = {
   title: "Trabaja con Danahe",
@@ -58,7 +58,7 @@ export default function WorkWithDanahePage() {
               </ul>
               <PhotoPlaceholder
                 aspect="3/2"
-                label="Equipo DANAHE en un servicio real"
+                label="Equipo Danahe en un servicio real"
                 className="mt-8"
               />
             </div>

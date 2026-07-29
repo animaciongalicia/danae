@@ -512,7 +512,7 @@ export default function CandidateForm() {
             htmlFor={fieldId("futureProcesses")}
             className="text-sm text-muted"
           >
-            Autorizo a DANAHE a conservar mi candidatura para futuros procesos
+            Autorizo a Danahe a conservar mi candidatura para futuros procesos
             durante el plazo indicado en la{" "}
             <Link
               href="/privacidad-candidatos"

@@ -81,7 +81,7 @@ export async function sendConfirmationEmail({
   await sendEmail({
     to,
     subject,
-    text: `${message}\n\n— DANAHE Talent`,
+    text: `${message}\n\n— Danahe Talent`,
     replyTo,
   });
 }

@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Política de cookies",
   description:
-    "Política de cookies del sitio web de DANAHE: este sitio no utiliza cookies de análisis, publicidad ni seguimiento.",
+    "Política de cookies del sitio web de Danahe: este sitio no utiliza cookies de análisis, publicidad ni seguimiento.",
   alternates: { canonical: "/cookies" },
 };
 

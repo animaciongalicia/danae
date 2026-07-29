@@ -2,9 +2,9 @@
 
 ## Project overview
 
-DANAHE is a corporate website for a talent management and operational staffing agency.
+Danahe is a corporate website for a talent management and operational staffing agency.
 
-DANAHE helps companies design, select, organize, coordinate and supervise teams for:
+Danahe helps companies design, select, organize, coordinate and supervise teams for:
 
 * Events.
 * Festivals.
@@ -17,11 +17,11 @@ DANAHE helps companies design, select, organize, coordinate and supervise teams 
 * Corporate environments.
 * Administrative and customer-facing roles.
 
-DANAHE must not be presented as a temporary employment agency or as a company that merely supplies workers.
+Danahe must not be presented as a temporary employment agency or as a company that merely supplies workers.
 
 The core positioning is:
 
-DANAHE designs talent and operational solutions that help services work better.
+Danahe designs talent and operational solutions that help services work better.
 
 The company works with people, but its commercial value is based on:
 
@@ -41,9 +41,9 @@ The project name used in code is `danae-web`.
 
 ## Main business message
 
-DANAHE does not simply search for staff.
+Danahe does not simply search for staff.
 
-DANAHE:
+Danahe:
 
 * Understands the client's operational need.
 * Defines the necessary roles.
@@ -369,7 +369,7 @@ Create a configuration file such as:
 
 ```ts
 export const siteConfig = {
-  name: "DANAHE Talent",
+  name: "Danahe Talent",
   legalName: "",
   siteUrl: "",
   email: "",

@@ -150,7 +150,7 @@ export async function POST(request: Request) {
   const data = parsed.data;
   const result = await sendEmail({
     to,
-    subject: "Nueva candidatura recibida desde la web de DANAHE",
+    subject: "Nueva candidatura recibida desde la web de Danahe",
     text: buildEmailText(data),
     replyTo: data.email,
     attachments: [

@@ -4,7 +4,7 @@ import { siteConfig, siteDescription } from "@/config/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: "DANAHE",
+    short_name: "Danahe",
     description: siteDescription,
     start_url: "/",
     display: "browser",

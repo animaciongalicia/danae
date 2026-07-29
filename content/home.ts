@@ -5,7 +5,7 @@ export const heroContent = {
   title:
     "Encontramos a las personas adecuadas, construimos el equipo y organizamos la operación para que cada servicio funcione mejor.",
   description:
-    "DANAHE trabaja con empresas, eventos y organizaciones que necesitan algo más que personal: necesitan que el servicio salga bien. Analizamos la necesidad, formamos el equipo, lo coordinamos y supervisamos la ejecución.",
+    "Danahe trabaja con empresas, eventos y organizaciones que necesitan algo más que personal: necesitan que el servicio salga bien. Analizamos la necesidad, formamos el equipo, lo coordinamos y supervisamos la ejecución.",
   primaryCta: { label: "Cuéntanos tu necesidad", href: "/contacto" },
   secondaryCta: { label: "Ver soluciones", href: "/soluciones" },
 };
@@ -83,7 +83,7 @@ export const homeOperationsContent = {
 };
 
 export const photoStripContent = {
-  title: "DANAHE en servicio",
+  title: "Danahe en servicio",
   photos: [
     { id: "barra", caption: "Montaje y servicio de barra" },
     { id: "congreso", caption: "Acreditación de congreso" },
@@ -172,7 +172,7 @@ export const resultsContent = {
 
 export const differentialContent = {
   eyebrow: "El diferencial",
-  title: "Qué hace diferente a DANAHE",
+  title: "Qué hace diferente a Danahe",
   points: [
     {
       title: "No cedemos personal: resolvemos servicios",
@@ -200,9 +200,9 @@ export const differentialContent = {
 export const founderContent = {
   eyebrow: "Quién está detrás",
   name: "Erika Danahe",
-  role: "Fundadora de DANAHE",
+  role: "Fundadora de Danahe",
   description:
-    "DANAHE nace de la experiencia real de Erika Danahe coordinando personas y operaciones en eventos, hostelería y servicios donde la ejecución y el trato lo son todo. De esa experiencia viene la forma de trabajar de la agencia: escuchar primero, organizar bien, poner responsables al frente y estar presente cuando el servicio ocurre.",
+    "Danahe nace de la experiencia real de Erika Danahe coordinando personas y operaciones en eventos, hostelería y servicios donde la ejecución y el trato lo son todo. De esa experiencia viene la forma de trabajar de la agencia: escuchar primero, organizar bien, poner responsables al frente y estar presente cuando el servicio ocurre.",
   note: "[Biografía ampliada pendiente: trayectoria y datos que Erika quiera hacer públicos.]",
 };
 
@@ -210,5 +210,5 @@ export const callToActionContent = {
   title: "Cuéntanos cómo es tu servicio",
   description:
     "Escríbenos y analizamos tu caso: qué necesitas, qué volumen tiene y qué debe salir bien. Te respondemos con una propuesta clara, sin compromiso.",
-  cta: { label: "Hablar con DANAHE", href: "/contacto" },
+  cta: { label: "Hablar con Danahe", href: "/contacto" },
 };
