@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { primaryCta } from "@/config/navigation";
 import type { SolutionBlock } from "@/types";
 
 function SolutionRow({
@@ -53,10 +54,10 @@ function SolutionRow({
             </p>
             <p>
               <Link
-                href="/contacto"
+                href={primaryCta.href}
                 className="text-sm font-medium text-accent-strong underline-offset-4 hover:underline"
               >
-                Cuéntanos tu caso
+                {primaryCta.label}
               </Link>
             </p>
           </div>

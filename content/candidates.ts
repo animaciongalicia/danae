@@ -101,27 +101,17 @@ export const candidateResponsibilityContent = {
   ],
 };
 
-export const candidateProfileOptions = [
-  "Personal de barra",
-  "Personal de sala",
-  "Responsable o mando intermedio",
-  "Coordinador/a",
-  "Promotor/a",
-  "Azafata/o",
-  "Administrativo/a",
-  "Recepcionista",
-  "Atención al cliente",
-  "Comercial",
-  "Auxiliar",
+// Both selects reuse the words shown on the page, so they can never drift.
+export const candidateProfileOptions: [string, ...string[]] = [
+  candidateProfilesContent.profiles[0],
+  ...candidateProfilesContent.profiles.slice(1),
   "Otro perfil",
-] as const;
+];
 
-export const responsibilityLevelOptions = [
-  "Personal operativo",
-  "Responsable de equipo",
-  "Coordinador",
-  "Dirección de servicio",
-] as const;
+export const responsibilityLevelOptions: [string, ...string[]] = [
+  candidateResponsibilityContent.levels[0].title,
+  ...candidateResponsibilityContent.levels.slice(1).map((l) => l.title),
+];
 
 export const yesNoOptions = ["Sí", "No"] as const;
 

@@ -26,6 +26,7 @@ export default function PhotoStrip() {
               photo={photo}
               aspect="4/5"
               sizes="(max-width: 640px) 100vw, 400px"
+              frame="bare"
             />
           ))}
         </div>

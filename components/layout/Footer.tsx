@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   legalNavigation,
-  mainNavigation,
+  siteNavigation,
   talentNavigation,
 } from "@/config/navigation";
 import { siteConfig, siteDescription } from "@/config/site";
@@ -48,7 +48,7 @@ export default function Footer() {
             <p className="mt-4 text-sm text-muted">{siteConfig.location}</p>
           </div>
 
-          <FooterColumn title="Soluciones" items={mainNavigation} />
+          <FooterColumn title="Navegación" items={siteNavigation} />
           <FooterColumn title="Talento" items={talentNavigation} />
           <FooterColumn title="Legal" items={legalNavigation} />
         </div>

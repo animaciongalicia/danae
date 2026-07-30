@@ -11,7 +11,7 @@ import {
   inputClasses,
   labelClasses,
 } from "@/components/forms/fieldStyles";
-import { needTypeOptions } from "@/content/contact";
+import { needTypeGroups, otherNeedTypeOption } from "@/content/contact";
 import { commercialFormSchema, getFieldErrors } from "@/lib/validation";
 
 const fieldOrder = [
@@ -249,11 +249,16 @@ export default function ContactForm() {
             <option value="" disabled>
               Selecciona una opción
             </option>
-            {needTypeOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
+            {needTypeGroups.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </optgroup>
             ))}
+            <option value={otherNeedTypeOption}>{otherNeedTypeOption}</option>
           </select>
           <FieldErrorMessage name="needType" errors={errors} />
         </div>

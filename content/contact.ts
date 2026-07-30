@@ -1,3 +1,5 @@
+import { operationalSolutionsGroup, talentSolutionsGroup } from "@/content/solutions";
+
 export const contactPageContent = {
   eyebrow: "Contacto",
   title: "Cuéntanos cómo es tu servicio",
@@ -25,25 +27,34 @@ export const inquiryTypesContent = [
 export const contactChannelsContent = {
   title: "Datos de contacto",
   note: "El formulario es la vía más rápida para llegar al equipo: respondemos todas las solicitudes.",
-  phoneLabel: "Llámanos y cuéntanoslo de viva voz",
-  whatsappLabel: "Escríbenos por WhatsApp",
+  phoneLabel: "Llamar por teléfono",
+  whatsappLabel: "Escribir por WhatsApp",
+  /** The page the visitor came from is appended so we know where it started. */
   whatsappMessage:
     "Hola, contacto desde la web de Danahe Talent. Me gustaría solicitar información sobre una solución de talento u operaciones.",
-  pendingNote:
-    "Los botones de llamada y WhatsApp se activarán al configurar el teléfono en la configuración del sitio.",
 };
 
-export const needTypeOptions = [
-  "Selección de talento",
-  "Gestión de un equipo",
-  "Operación de un evento",
-  "Gestión de barras",
-  "Congreso o feria",
-  "Refuerzo de hostelería",
-  "Promoción o campaña",
-  "Personal para empresa",
-  "Otra necesidad",
-] as const;
+/**
+ * The need types offered in the form are the catalogue itself, so the words a
+ * client reads in Soluciones are the same ones they pick here.
+ */
+export const needTypeGroups = [
+  {
+    label: talentSolutionsGroup.title,
+    options: talentSolutionsGroup.items.map((item) => item.title),
+  },
+  {
+    label: operationalSolutionsGroup.title,
+    options: operationalSolutionsGroup.items.map((item) => item.title),
+  },
+];
+
+export const otherNeedTypeOption = "Otra necesidad";
+
+export const needTypeOptions: [string, ...string[]] = [
+  otherNeedTypeOption,
+  ...needTypeGroups.flatMap((group) => group.options),
+];
 
 export const contactFormIntroContent = {
   title: "Necesito una solución",

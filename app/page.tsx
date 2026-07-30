@@ -26,6 +26,7 @@ export default function HomePage() {
         title={homeTalentContent.title}
         description={homeTalentContent.description}
         items={homeTalentContent.items}
+        anchor="soluciones-de-talento"
         cta={homeTalentContent.cta}
         tone="surface"
       />
@@ -34,6 +35,7 @@ export default function HomePage() {
         title={homeOperationsContent.title}
         description={homeOperationsContent.description}
         items={homeOperationsContent.items}
+        anchor="soluciones-operativas"
         cta={homeOperationsContent.cta}
       />
       <ResultsSection />

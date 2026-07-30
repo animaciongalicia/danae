@@ -51,7 +51,7 @@ export default function WorkWithDanahePage() {
             {candidateProfilesContent.profiles.map((profile) => (
               <li
                 key={profile}
-                className="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-border bg-white/60 px-4 py-2 text-sm text-foreground shadow-sm"
+                className="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted"
               >
                 <span
                   aria-hidden="true"

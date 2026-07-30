@@ -6,6 +6,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import FaqSection from "@/components/sections/FaqSection";
 import JsonLd from "@/components/seo/JsonLd";
 import SitePhoto from "@/components/ui/SitePhoto";
+import ContactActions from "@/components/ui/ContactActions";
 import { sitePhotos } from "@/content/photos";
 import { faqJsonLd, webPageJsonLd } from "@/lib/structuredData";
 import { siteConfig } from "@/config/site";
@@ -26,10 +27,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const whatsappHref = siteConfig.whatsapp
-    ? `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(contactChannelsContent.whatsappMessage)}`
-    : "";
-
   return (
     <main className="flex-1">
       <section className="border-b border-border bg-surface">
@@ -91,17 +88,28 @@ export default function ContactPage() {
                   {contactChannelsContent.title}
                 </h2>
                 <ul className="mt-4 space-y-3 text-sm text-muted">
-                  {siteConfig.email ? (
-                    <li>
-                      <span className="font-medium text-foreground">Email:</span>{" "}
-                      <a
-                        href={`mailto:${siteConfig.email}`}
-                        className="text-accent-strong underline-offset-4 hover:underline"
-                      >
-                        {siteConfig.email}
-                      </a>
-                    </li>
-                  ) : null}
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Correo electrónico:
+                    </span>{" "}
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-accent-strong underline-offset-4 hover:underline"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Teléfono:
+                    </span>{" "}
+                    <a
+                      href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                      className="text-accent-strong underline-offset-4 hover:underline"
+                    >
+                      {siteConfig.phone}
+                    </a>
+                  </li>
                   <li>
                     <span className="font-medium text-foreground">
                       Ubicación:
@@ -112,37 +120,13 @@ export default function ContactPage() {
                 <p className="mt-4 text-sm leading-relaxed text-muted">
                   {contactChannelsContent.note}
                 </p>
-
-                <div className="mt-6 flex flex-col gap-3">
-                  {siteConfig.phone ? (
-                    <a
-                      href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                      className="inline-flex items-center justify-center rounded-full bg-accent-strong px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-strong"
-                    >
-                      {contactChannelsContent.phoneLabel}
-                    </a>
-                  ) : null}
-                  {whatsappHref ? (
-                    <a
-                      href={whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-accent-strong px-6 py-3 text-sm font-medium text-accent-strong transition-colors hover:bg-accent-strong hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-strong"
-                    >
-                      {contactChannelsContent.whatsappLabel}
-                    </a>
-                  ) : null}
-                  {!siteConfig.phone && !whatsappHref ? (
-                    <p className="text-xs italic text-muted">
-                      {contactChannelsContent.pendingNote}
-                    </p>
-                  ) : null}
-                </div>
+                <ContactActions source="/contacto" className="mt-6" />
               </div>
               <SitePhoto
                 photo={sitePhotos.contactAside}
                 aspect="4/5"
                 sizes="(max-width: 1024px) 100vw, 340px"
+                frame="bare"
                 showCaption={false}
               />
             </aside>

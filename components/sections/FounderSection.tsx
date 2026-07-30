@@ -16,6 +16,7 @@ export default function FounderSection() {
             photo={sitePhotos.founder}
             aspect="4/5"
             sizes="(max-width: 768px) 100vw, 320px"
+            frame="bare"
             showCaption={false}
             className="mx-auto w-full max-w-xs md:col-span-2"
           />
@@ -31,9 +32,6 @@ export default function FounderSection() {
             </p>
             <p className="mt-5 text-lg leading-relaxed text-muted">
               {founderContent.description}
-            </p>
-            <p className="mt-4 text-xs italic text-muted">
-              {founderContent.note}
             </p>
           </div>
         </div>
