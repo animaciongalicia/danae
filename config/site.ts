@@ -3,7 +3,9 @@
 export const siteConfig = {
   name: "Danahe Talent",
   legalName: "Danahe Talent",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://danahetalent.com",
+  // Must match the primary domain configured in Vercel (www), so canonical
+  // URLs and the sitemap never point at a URL that redirects.
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.danahetalent.com",
   email: "info@danahetalent.com",
   candidateEmail: "info@danahetalent.com",
   phone: process.env.NEXT_PUBLIC_PHONE ?? "+34 711 72 36 30",
